@@ -1,38 +1,37 @@
 {
   "schemaVersion": 1,
-  "id": "modid",
+  "id": "effectiveregalia",
   "version": "${version}",
 
-  "name": "Example Mod",
-  "description": "This is an example description! Tell everyone what your mod is about!",
+  "name": "Effective Regalia",
+  "description": "There are myths speaking of ancient relics of some kind, used to create things known as ‘Regalia Of The Effective Age.' Will you go and construct them?",
   "authors": [
-    "Me!"
+    "DakotaPride (Author)",
+    "HoloScopeStudios (Mascot)"
   ],
   "contact": {
-    "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
+    "homepage": "www.curseforge.com/minecraft/mc-mods/effective-regalia",
+    "sources": "https://github.com/DakotaPride/effective-regalia",
+    "issues": "https://github.com/DakotaPride/effective-regalia/issues"
   },
 
-  "license": "CC0-1.0",
-  "icon": "assets/modid/icon.png",
+  "license": "MIT",
+  "icon": "assets/effectiveregalia/icon.png",
 
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.fabricmc.example.ExampleMod"
+      "net.dakotapride.effectiveRegalia.common.EffectiveRegalia"
     ]
   },
   "mixins": [
-    "modid.mixins.json"
+    "effectiveregalia.mixins.json"
   ],
 
   "depends": {
-    "fabricloader": ">=0.14.10",
+    "fabricloader": "*",
     "fabric-api": "*",
     "minecraft": "~1.19",
     "java": ">=17"
-  },
-  "suggests": {
-    "another-mod": "*"
   }
 }
