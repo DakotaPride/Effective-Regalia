@@ -3,9 +3,7 @@
   "minVersion": "0.8",
   "package": "net.dakotapride.effectiveRegalia.mixin",
   "compatibilityLevel": "JAVA_17",
-  "mixins": [
-    "PlayerEntityMixin"
-  ],
+  "mixins": [],
   "client": [],
   "injectors": {
     "defaultRequire": 1
