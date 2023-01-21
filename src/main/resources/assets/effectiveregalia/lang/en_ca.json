@@ -1,0 +1,21 @@
+{
+  "item.effectiveregalia.regalia": "Regalia",
+
+  "item.effectiveregalia.regalia_strength": "Regalia",
+  "item.effectiveregalia.regalia_regeneration": "Regalia",
+  "item.effectiveregalia.regalia_night_vision": "Regalia",
+  "item.effectiveregalia.regalia_saturation": "Regalia",
+  "item.effectiveregalia.regalia_jump_boost": "Regalia",
+
+  "item.effectiveregalia.golden_regalia_strength": "Golden Regalia",
+  "item.effectiveregalia.golden_regalia_regeneration": "Golden Regalia",
+  "item.effectiveregalia.golden_regalia_night_vision": "Golden Regalia",
+  "item.effectiveregalia.golden_regalia_saturation": "Golden Regalia",
+  "item.effectiveregalia.golden_regalia_jump_boost": "Golden Regalia",
+
+  "item.effectiveregalia.plated_regalia_strength": "Plated Regalia",
+  "item.effectiveregalia.plated_regalia_regeneration": "Plated Regalia",
+  "item.effectiveregalia.plated_regalia_night_vision": "Plated Regalia",
+  "item.effectiveregalia.plated_regalia_saturation": "Plated Regalia",
+  "item.effectiveregalia.plated_regalia_jump_boost": "Plated Regalia"
+}

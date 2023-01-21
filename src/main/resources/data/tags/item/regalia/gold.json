@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "effectiveregalia:golden_regalia_strength",
+    "effectiveregalia:golden_regalia_night_vision",
+    "effectiveregalia:golden_regalia_regeneration",
+    "effectiveregalia:golden_regalia_saturation",
+    "effectiveregalia:golden_regalia_jump_boost"
+  ]
+}

@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "effectiveregalia:item/regalia/health_boost"
+    "layer0": "effectiveregalia:item/regalia/gold/saturation"
   }
 }

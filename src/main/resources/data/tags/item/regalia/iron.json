@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "values": [
+    "effectiveregalia:regalia",
+
+    "effectiveregalia:regalia_strength",
+    "effectiveregalia:regalia_night_vision",
+    "effectiveregalia:regalia_regeneration",
+    "effectiveregalia:regalia_saturation",
+    "effectiveregalia:regalia_jump_boost"
+  ]
+}

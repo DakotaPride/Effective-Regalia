@@ -4,38 +4,38 @@ import net.dakotapride.effectiveRegalia.common.item.base.RegaliaItem;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 
-public class NightVisionRegaliaItem extends RegaliaItem {
-    public NightVisionRegaliaItem(Settings settings) {
+public class SaturationRegaliaItem extends RegaliaItem {
+    public SaturationRegaliaItem(Settings settings) {
         super(settings);
     }
 
     @Override
     public StatusEffectInstance getRegaliaEffect() {
-        effect = StatusEffects.NIGHT_VISION;
+        effect = StatusEffects.SATURATION;
         return new StatusEffectInstance(effect, 200, 0);
     }
 
-    public static class GoldenNightVisionRegalia extends NightVisionRegaliaItem {
-        public GoldenNightVisionRegalia(Settings settings) {
+    public static class GoldenSaturationRegalia extends SaturationRegaliaItem {
+        public GoldenSaturationRegalia(Settings settings) {
             super(settings);
         }
 
         @Override
         public StatusEffectInstance getRegaliaEffect() {
-            effect = StatusEffects.NIGHT_VISION;
+            effect = StatusEffects.SATURATION;
             return new StatusEffectInstance(effect, 200, 1);
         }
 
     }
 
-    public static class NetheritePlatedNightVisionRegalia extends NightVisionRegaliaItem {
-        public NetheritePlatedNightVisionRegalia(Settings settings) {
+    public static class NetheritePlatedSaturationRegalia extends SaturationRegaliaItem {
+        public NetheritePlatedSaturationRegalia(Settings settings) {
             super(settings);
         }
 
         @Override
         public StatusEffectInstance getRegaliaEffect() {
-            effect = StatusEffects.NIGHT_VISION;
+            effect = StatusEffects.SATURATION;
             return new StatusEffectInstance(effect, 200, 2);
         }
 

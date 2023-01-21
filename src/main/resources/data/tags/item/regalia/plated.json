@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "effectiveregalia:plated_regalia_strength",
+    "effectiveregalia:plated_regalia_night_vision",
+    "effectiveregalia:plated_regalia_regeneration",
+    "effectiveregalia:plated_regalia_saturation",
+    "effectiveregalia:plated_regalia_jump_boost"
+  ]
+}
