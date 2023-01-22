@@ -6,16 +6,27 @@
   "item.effectiveregalia.regalia_night_vision": "Regalia",
   "item.effectiveregalia.regalia_saturation": "Regalia",
   "item.effectiveregalia.regalia_jump_boost": "Regalia",
+  "item.effectiveregalia.regalia_slow_falling": "Regalia",
 
   "item.effectiveregalia.golden_regalia_strength": "Golden Regalia",
   "item.effectiveregalia.golden_regalia_regeneration": "Golden Regalia",
   "item.effectiveregalia.golden_regalia_night_vision": "Golden Regalia",
   "item.effectiveregalia.golden_regalia_saturation": "Golden Regalia",
   "item.effectiveregalia.golden_regalia_jump_boost": "Golden Regalia",
+  "item.effectiveregalia.golden_regalia_slow_falling": "Golden Regalia",
+
 
   "item.effectiveregalia.plated_regalia_strength": "Plated Regalia",
   "item.effectiveregalia.plated_regalia_regeneration": "Plated Regalia",
   "item.effectiveregalia.plated_regalia_night_vision": "Plated Regalia",
   "item.effectiveregalia.plated_regalia_saturation": "Plated Regalia",
-  "item.effectiveregalia.plated_regalia_jump_boost": "Plated Regalia"
+  "item.effectiveregalia.plated_regalia_jump_boost": "Plated Regalia",
+  "item.effectiveregalia.plated_regalia_slow_falling": "Plated Regalia",
+
+  "text.effectiveregalia.regalia.jump_boost": "Capability: Jump Boost",
+  "text.effectiveregalia.regalia.night_vision": "Capability: Night Vision",
+  "text.effectiveregalia.regalia.regeneration": "Capability: Regeneration",
+  "text.effectiveregalia.regalia.saturation": "Capability: Saturation",
+  "text.effectiveregalia.regalia.strength": "Capability: Strength",
+  "text.effectiveregalia.regalia.slow_falling": "Capability: Slow Falling"
 }

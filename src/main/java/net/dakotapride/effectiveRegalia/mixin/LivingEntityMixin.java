@@ -1,7 +1,18 @@
 package net.dakotapride.effectiveRegalia.mixin;
 
 import net.dakotapride.effectiveRegalia.common.item.*;
-import net.dakotapride.effectiveRegalia.common.item.base.*;
+import net.dakotapride.effectiveRegalia.common.item.JumpBoostRegaliaItem.GoldenJumpBoostRegalia;
+import net.dakotapride.effectiveRegalia.common.item.JumpBoostRegaliaItem.NetheritePlatedJumpBoostRegalia;
+import net.dakotapride.effectiveRegalia.common.item.NightVisionRegaliaItem.GoldenNightVisionRegalia;
+import net.dakotapride.effectiveRegalia.common.item.NightVisionRegaliaItem.NetheritePlatedNightVisionRegalia;
+import net.dakotapride.effectiveRegalia.common.item.RegenerationRegaliaItem.GoldenRegenerationRegalia;
+import net.dakotapride.effectiveRegalia.common.item.RegenerationRegaliaItem.NetheritePlatedRegenerationRegalia;
+import net.dakotapride.effectiveRegalia.common.item.SaturationRegaliaItem.GoldenSaturationRegalia;
+import net.dakotapride.effectiveRegalia.common.item.SaturationRegaliaItem.NetheritePlatedSaturationRegalia;
+import net.dakotapride.effectiveRegalia.common.item.SlowFallingRegaliaItem.GoldenSlowFallingRegalia;
+import net.dakotapride.effectiveRegalia.common.item.SlowFallingRegaliaItem.NetheritePlatedSlowFallingRegalia;
+import net.dakotapride.effectiveRegalia.common.item.StrengthRegaliaItem.GoldenStrengthRegalia;
+import net.dakotapride.effectiveRegalia.common.item.StrengthRegaliaItem.NetheritePlatedStrengthRegalia;
 import net.dakotapride.effectiveRegalia.common.register.Constants;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
@@ -11,18 +22,14 @@ import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
+import net.minecraft.util.Hand;
+import net.minecraft.util.math.random.Random;
 import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
-
-import net.dakotapride.effectiveRegalia.common.item.RegenerationRegaliaItem.*;
-import net.dakotapride.effectiveRegalia.common.item.StrengthRegaliaItem.*;
-import net.dakotapride.effectiveRegalia.common.item.NightVisionRegaliaItem.*;
-import net.dakotapride.effectiveRegalia.common.item.SaturationRegaliaItem.*;
-import net.dakotapride.effectiveRegalia.common.item.JumpBoostRegaliaItem.*;
 
 @Mixin(LivingEntity.class)
 public abstract class LivingEntityMixin extends Entity implements Constants {
@@ -34,10 +41,8 @@ public abstract class LivingEntityMixin extends Entity implements Constants {
 
     @Inject(method = "hasStatusEffect", at = @At("HEAD"))
     private void hasStatusEffect(StatusEffect effect, CallbackInfoReturnable<Boolean> cir) {
-        RegaliaItem.effect = effect;
         if (livingEntity instanceof PlayerEntity playerEntity) {
             Item getItem = playerEntity.getOffHandStack().getItem();
-            ItemStack stack = playerEntity.getOffHandStack();
 
             if (getItem instanceof StrengthRegaliaItem) {
                 playerEntity.addStatusEffect(new StatusEffectInstance
@@ -54,6 +59,9 @@ public abstract class LivingEntityMixin extends Entity implements Constants {
             } else if (getItem instanceof JumpBoostRegaliaItem) {
                 playerEntity.addStatusEffect(new StatusEffectInstance
                         (StatusEffects.JUMP_BOOST, 200, 0));
+            } else if (getItem instanceof SlowFallingRegaliaItem) {
+                playerEntity.addStatusEffect(new StatusEffectInstance
+                        (StatusEffects.SLOW_FALLING, 200, 0));
             }
 
             if (getItem instanceof GoldenStrengthRegalia) {
@@ -71,6 +79,9 @@ public abstract class LivingEntityMixin extends Entity implements Constants {
             } else if (getItem instanceof GoldenJumpBoostRegalia) {
                 playerEntity.addStatusEffect(new StatusEffectInstance
                         (StatusEffects.JUMP_BOOST, 200, 1));
+            } else if (getItem instanceof GoldenSlowFallingRegalia) {
+                playerEntity.addStatusEffect(new StatusEffectInstance
+                        (StatusEffects.SLOW_FALLING, 200, 1));
             }
 
             if (getItem instanceof NetheritePlatedStrengthRegalia) {
@@ -88,6 +99,9 @@ public abstract class LivingEntityMixin extends Entity implements Constants {
             } else if (getItem instanceof NetheritePlatedJumpBoostRegalia) {
                 playerEntity.addStatusEffect(new StatusEffectInstance
                         (StatusEffects.JUMP_BOOST, 200, 2));
+            } else if (getItem instanceof NetheritePlatedSlowFallingRegalia) {
+                playerEntity.addStatusEffect(new StatusEffectInstance
+                        (StatusEffects.SLOW_FALLING, 200, 2));
             }
         }
     }

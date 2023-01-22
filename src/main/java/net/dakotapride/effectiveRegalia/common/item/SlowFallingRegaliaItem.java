@@ -11,27 +11,27 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public class StrengthRegaliaItem extends RegaliaItem {
-    public StrengthRegaliaItem(Settings settings) {
+public class SlowFallingRegaliaItem extends RegaliaItem {
+    public SlowFallingRegaliaItem(Settings settings) {
         super(settings);
     }
 
     @Override
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
-        tooltipText = "text.effectiveregalia.regalia.strength";
+        tooltipText = "text.effectiveregalia.regalia.slow_falling";
 
         super.appendTooltip(stack, world, tooltip, context);
     }
 
-    public static class GoldenStrengthRegalia extends StrengthRegaliaItem {
-        public GoldenStrengthRegalia(Settings settings) {
+    public static class GoldenSlowFallingRegalia extends SlowFallingRegaliaItem {
+        public GoldenSlowFallingRegalia(Settings settings) {
             super(settings);
         }
 
     }
 
-    public static class NetheritePlatedStrengthRegalia extends StrengthRegaliaItem {
-        public NetheritePlatedStrengthRegalia(Settings settings) {
+    public static class NetheritePlatedSlowFallingRegalia extends SlowFallingRegaliaItem {
+        public NetheritePlatedSlowFallingRegalia(Settings settings) {
             super(settings);
         }
 
