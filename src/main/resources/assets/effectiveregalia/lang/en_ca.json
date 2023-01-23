@@ -1,5 +1,7 @@
 {
   "item.effectiveregalia.regalia": "Regalia",
+  "item.effectiveregalia.golden_regalia": "Golden Regalia",
+  "item.effectiveregalia.plated_regalia": "Plated Regalia",
 
   "item.effectiveregalia.regalia_strength": "Regalia",
   "item.effectiveregalia.regalia_regeneration": "Regalia",
@@ -15,7 +17,6 @@
   "item.effectiveregalia.golden_regalia_jump_boost": "Golden Regalia",
   "item.effectiveregalia.golden_regalia_slow_falling": "Golden Regalia",
 
-
   "item.effectiveregalia.plated_regalia_strength": "Plated Regalia",
   "item.effectiveregalia.plated_regalia_regeneration": "Plated Regalia",
   "item.effectiveregalia.plated_regalia_night_vision": "Plated Regalia",
@@ -28,5 +29,12 @@
   "text.effectiveregalia.regalia.regeneration": "Capability: Regeneration",
   "text.effectiveregalia.regalia.saturation": "Capability: Saturation",
   "text.effectiveregalia.regalia.strength": "Capability: Strength",
-  "text.effectiveregalia.regalia.slow_falling": "Capability: Slow Falling"
+  "text.effectiveregalia.regalia.slow_falling": "Capability: Slow Falling",
+  "text.effectiveregalia.regalia.none": "Capability: None",
+
+  "item.effectiveregalia.blazing_warrior": "Capability: Night Vision",
+  "item.effectiveregalia.golden_meal": "Capability: Regeneration",
+  "item.effectiveregalia.crying_soul": "Capability: Saturation",
+  "item.effectiveregalia.leaping_contender": "Capability: Strength",
+  "item.effectiveregalia.night_sky": "Capability: Slow Falling"
 }
