@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "regalia_relic",
+  "pattern": [
+    "###",
+    "#X#",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:blaze_powder"
+    },
+    "X": {
+      "item": "minecraft:blaze_rod"
+    }
+  },
+  "result": {
+    "item": "effectiveregalia:blazing_warrior",
+    "count": 1
+  }
+}

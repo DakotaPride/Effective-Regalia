@@ -9,7 +9,7 @@ public interface Constants {
     String modId = "effectiveregalia";
 
 
-    TagKey<Item> regaliaItemTag = TagKey.of(Registry.ITEM_KEY, new Identifier(modId, "regalia/base"));
+    TagKey<Item> regaliaItemsTag = TagKey.of(Registry.ITEM_KEY, new Identifier(modId, "regalia/base"));
     TagKey<Item> ironRegaliaItemsTag = TagKey.of(Registry.ITEM_KEY, new Identifier(modId, "regalia/iron"));
     TagKey<Item> goldenRegaliaItemsTag = TagKey.of(Registry.ITEM_KEY, new Identifier(modId, "regalia/gold"));
     TagKey<Item> netheritePlatedRegaliaItemsTag = TagKey.of(Registry.ITEM_KEY, new Identifier(modId, "regalia/plated"));

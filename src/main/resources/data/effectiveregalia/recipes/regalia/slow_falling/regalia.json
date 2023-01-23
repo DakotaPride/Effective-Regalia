@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "slow_falling_regalia",
+  "ingredients": [
+    {
+      "item": "effectiveregalia:regalia"
+    },
+    {
+      "item": "effectiveregalia:night_sky"
+    }
+  ],
+  "result": {
+    "item": "effectiveregalia:regalia_slow_falling",
+    "count": 1
+  }
+}

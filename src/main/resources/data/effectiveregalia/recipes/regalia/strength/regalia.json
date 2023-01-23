@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "strength_regalia",
+  "ingredients": [
+    {
+      "item": "effectiveregalia:regalia"
+    },
+    {
+      "item": "effectiveregalia:blazing_warrior"
+    }
+  ],
+  "result": {
+    "item": "effectiveregalia:regalia_strength",
+    "count": 1
+  }
+}

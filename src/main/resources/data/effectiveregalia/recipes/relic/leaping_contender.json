@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "regalia_relic",
+  "pattern": [
+    "###",
+    "#X#",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:slime_ball"
+    },
+    "X": {
+      "item": "minecraft:rabbit_foot"
+    }
+  },
+  "result": {
+    "item": "effectiveregalia:leaping_contender",
+    "count": 1
+  }
+}

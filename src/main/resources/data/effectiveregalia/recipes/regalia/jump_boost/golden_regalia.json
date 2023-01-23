@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "jump_boost_regalia",
+  "ingredients": [
+    {
+      "item": "effectiveregalia:golden_regalia"
+    },
+    {
+      "item": "effectiveregalia:leaping_contender"
+    }
+  ],
+  "result": {
+    "item": "effectiveregalia:golden_regalia_jump_boost",
+    "count": 1
+  }
+}

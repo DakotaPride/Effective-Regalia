@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "saturation_regalia",
+  "ingredients": [
+    {
+      "item": "effectiveregalia:golden_regalia"
+    },
+    {
+      "item": "effectiveregalia:golden_meal"
+    },
+    {
+      "item": "minecraft:cake"
+    }
+  ],
+  "result": {
+    "item": "effectiveregalia:golden_regalia_saturation",
+    "count": 1
+  }
+}

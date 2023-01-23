@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "night_vision_regalia",
+  "ingredients": [
+    {
+      "item": "effectiveregalia:plated_regalia"
+    },
+    {
+      "item": "effectiveregalia:golden_meal"
+    }
+  ],
+  "result": {
+    "item": "effectiveregalia:plated_regalia_night_vision",
+    "count": 1
+  }
+}
