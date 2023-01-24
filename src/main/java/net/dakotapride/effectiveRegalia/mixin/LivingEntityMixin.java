@@ -1,18 +1,18 @@
 package net.dakotapride.effectiveRegalia.mixin;
 
-import net.dakotapride.effectiveRegalia.common.item.*;
-import net.dakotapride.effectiveRegalia.common.item.JumpBoostRegaliaItem.GoldenJumpBoostRegalia;
-import net.dakotapride.effectiveRegalia.common.item.JumpBoostRegaliaItem.NetheritePlatedJumpBoostRegalia;
-import net.dakotapride.effectiveRegalia.common.item.NightVisionRegaliaItem.GoldenNightVisionRegalia;
-import net.dakotapride.effectiveRegalia.common.item.NightVisionRegaliaItem.NetheritePlatedNightVisionRegalia;
-import net.dakotapride.effectiveRegalia.common.item.RegenerationRegaliaItem.GoldenRegenerationRegalia;
-import net.dakotapride.effectiveRegalia.common.item.RegenerationRegaliaItem.NetheritePlatedRegenerationRegalia;
-import net.dakotapride.effectiveRegalia.common.item.SaturationRegaliaItem.GoldenSaturationRegalia;
-import net.dakotapride.effectiveRegalia.common.item.SaturationRegaliaItem.NetheritePlatedSaturationRegalia;
-import net.dakotapride.effectiveRegalia.common.item.SlowFallingRegaliaItem.GoldenSlowFallingRegalia;
-import net.dakotapride.effectiveRegalia.common.item.SlowFallingRegaliaItem.NetheritePlatedSlowFallingRegalia;
-import net.dakotapride.effectiveRegalia.common.item.StrengthRegaliaItem.GoldenStrengthRegalia;
-import net.dakotapride.effectiveRegalia.common.item.StrengthRegaliaItem.NetheritePlatedStrengthRegalia;
+import net.dakotapride.effectiveRegalia.common.item.effect.*;
+import net.dakotapride.effectiveRegalia.common.item.effect.JumpBoostRegaliaItem.GoldenJumpBoostRegalia;
+import net.dakotapride.effectiveRegalia.common.item.effect.JumpBoostRegaliaItem.NetheritePlatedJumpBoostRegalia;
+import net.dakotapride.effectiveRegalia.common.item.effect.NightVisionRegaliaItem.GoldenNightVisionRegalia;
+import net.dakotapride.effectiveRegalia.common.item.effect.NightVisionRegaliaItem.NetheritePlatedNightVisionRegalia;
+import net.dakotapride.effectiveRegalia.common.item.effect.RegenerationRegaliaItem.GoldenRegenerationRegalia;
+import net.dakotapride.effectiveRegalia.common.item.effect.RegenerationRegaliaItem.NetheritePlatedRegenerationRegalia;
+import net.dakotapride.effectiveRegalia.common.item.effect.SaturationRegaliaItem.GoldenSaturationRegalia;
+import net.dakotapride.effectiveRegalia.common.item.effect.SaturationRegaliaItem.NetheritePlatedSaturationRegalia;
+import net.dakotapride.effectiveRegalia.common.item.effect.SlowFallingRegaliaItem.GoldenSlowFallingRegalia;
+import net.dakotapride.effectiveRegalia.common.item.effect.SlowFallingRegaliaItem.NetheritePlatedSlowFallingRegalia;
+import net.dakotapride.effectiveRegalia.common.item.effect.StrengthRegaliaItem.GoldenStrengthRegalia;
+import net.dakotapride.effectiveRegalia.common.item.effect.StrengthRegaliaItem.NetheritePlatedStrengthRegalia;
 import net.dakotapride.effectiveRegalia.common.register.Constants;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
@@ -22,13 +22,10 @@ import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
-import net.minecraft.util.Hand;
-import net.minecraft.util.math.random.Random;
 import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(LivingEntity.class)

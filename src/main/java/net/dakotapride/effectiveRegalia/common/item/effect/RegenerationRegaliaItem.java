@@ -1,17 +1,11 @@
-package net.dakotapride.effectiveRegalia.common.item;
+package net.dakotapride.effectiveRegalia.common.item.effect;
 
 import net.dakotapride.effectiveRegalia.common.item.base.RegaliaItem;
-import net.dakotapride.effectiveRegalia.common.register.ItemInit;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.effect.StatusEffectInstance;
-import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.text.Text;
-import net.minecraft.util.Hand;
-import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
@@ -23,28 +17,14 @@ public class RegenerationRegaliaItem extends RegaliaItem {
     }
 
     @Override
-    public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
-        if (user.getOffHandStack().isOf(this.getDefaultStack().getItem())
-                || user.getMainHandStack().isOf(this.getDefaultStack().getItem())) {
-            user.getOffHandStack().decrement(1);
-
-            user.giveItemStack(new ItemStack(ItemInit.REGALIA, 1));
-            user.giveItemStack(new ItemStack(ItemInit.CRYING_RELIC, 1));
-
-
-            return TypedActionResult.pass(user.getOffHandStack());
-        } else {
-            return TypedActionResult.fail(user.getOffHandStack());
-        }
-    }
-
-    @Override
     public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
         if (entity instanceof PlayerEntity playerEntity) {
             if (playerEntity.getOffHandStack().isOf(this.getDefaultStack().getItem()) && (entity.age % 60) == 0) {
                 stack.damage(1, playerEntity, (player) -> player.sendToolBreakStatus(player.getActiveHand()));
             }
         }
+
+        super.inventoryTick(stack, world, entity, slot, selected);
     }
 
     @Override
@@ -60,28 +40,14 @@ public class RegenerationRegaliaItem extends RegaliaItem {
         }
 
         @Override
-        public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
-            if (user.getOffHandStack().isOf(this.getDefaultStack().getItem())
-                || user.getMainHandStack().isOf(this.getDefaultStack().getItem())) {
-                user.getOffHandStack().decrement(1);
-
-                user.giveItemStack(new ItemStack(ItemInit.REGALIA_GOLDEN, 1));
-                user.giveItemStack(new ItemStack(ItemInit.CRYING_RELIC, 1));
-
-
-                return TypedActionResult.pass(user.getOffHandStack());
-            } else {
-                return TypedActionResult.fail(user.getOffHandStack());
-            }
-        }
-
-        @Override
         public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
             if (entity instanceof PlayerEntity playerEntity) {
                 if (playerEntity.getOffHandStack().isOf(this.getDefaultStack().getItem()) && (entity.age % 75) == 0) {
                     stack.damage(1, playerEntity, (player) -> player.sendToolBreakStatus(player.getActiveHand()));
                 }
             }
+
+            super.inventoryTick(stack, world, entity, slot, selected);
         }
 
     }
@@ -92,28 +58,14 @@ public class RegenerationRegaliaItem extends RegaliaItem {
         }
 
         @Override
-        public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
-            if (user.getOffHandStack().isOf(this.getDefaultStack().getItem())
-                || user.getMainHandStack().isOf(this.getDefaultStack().getItem())) {
-                user.getOffHandStack().decrement(1);
-
-                user.giveItemStack(new ItemStack(ItemInit.REGALIA_PLATED, 1));
-                user.giveItemStack(new ItemStack(ItemInit.CRYING_RELIC, 1));
-
-
-                return TypedActionResult.pass(user.getOffHandStack());
-            } else {
-                return TypedActionResult.fail(user.getOffHandStack());
-            }
-        }
-
-        @Override
         public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
             if (entity instanceof PlayerEntity playerEntity) {
                 if (playerEntity.getOffHandStack().isOf(this.getDefaultStack().getItem()) && (entity.age % 85) == 0) {
                     stack.damage(1, playerEntity, (player) -> player.sendToolBreakStatus(player.getActiveHand()));
                 }
             }
+
+            super.inventoryTick(stack, world, entity, slot, selected);
         }
 
     }

@@ -1,19 +1,19 @@
 package net.dakotapride.effectiveRegalia.common.register;
 
-import net.dakotapride.effectiveRegalia.common.item.*;
 import net.dakotapride.effectiveRegalia.common.item.base.RegaliaItem;
+import net.dakotapride.effectiveRegalia.common.item.effect.*;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
-import net.dakotapride.effectiveRegalia.common.item.NightVisionRegaliaItem.*;
-import net.dakotapride.effectiveRegalia.common.item.RegenerationRegaliaItem.*;
-import net.dakotapride.effectiveRegalia.common.item.StrengthRegaliaItem.*;
-import net.dakotapride.effectiveRegalia.common.item.SaturationRegaliaItem.*;
-import net.dakotapride.effectiveRegalia.common.item.JumpBoostRegaliaItem.*;
-import net.dakotapride.effectiveRegalia.common.item.SlowFallingRegaliaItem.*;
+import net.dakotapride.effectiveRegalia.common.item.effect.NightVisionRegaliaItem.*;
+import net.dakotapride.effectiveRegalia.common.item.effect.RegenerationRegaliaItem.*;
+import net.dakotapride.effectiveRegalia.common.item.effect.StrengthRegaliaItem.*;
+import net.dakotapride.effectiveRegalia.common.item.effect.SaturationRegaliaItem.*;
+import net.dakotapride.effectiveRegalia.common.item.effect.JumpBoostRegaliaItem.*;
+import net.dakotapride.effectiveRegalia.common.item.effect.SlowFallingRegaliaItem.*;
 
 public class ItemInit implements Constants {
 
