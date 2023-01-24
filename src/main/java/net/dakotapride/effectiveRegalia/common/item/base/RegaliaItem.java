@@ -24,39 +24,37 @@ public class RegaliaItem extends Item implements Constants {
 
     @Override
     public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
-        if (entity instanceof PlayerEntity playerEntity) {
-            if (playerEntity.getOffHandStack().isOf(this.getDefaultStack().getItem())) {
-                if (stack.isIn(ironRegaliaItemsTag)) {
-                    if (stack.getDamage() < 615) {
-                        playerEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.WEAKNESS, 200, 0));
-                    }
-
-                    if (stack.getDamage() < 256) {
-                        playerEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.WEAKNESS, 200, 1));
-                        playerEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, 200, 0));
-                    }
+        if (entity instanceof PlayerEntity playerEntity && playerEntity.getOffHandStack() == stack) {
+            if (stack.isIn(ironRegaliaItemsTag)) {
+                if (stack.getDamage() < 615) {
+                    playerEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.WEAKNESS, 200, 0));
                 }
 
-                if (stack.isIn(goldenRegaliaItemsTag)) {
-                    if (stack.getDamage() < 1006) {
-                        playerEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.WEAKNESS, 200, 0));
-                    }
+                if (stack.getDamage() < 256) {
+                    playerEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.WEAKNESS, 200, 1));
+                    playerEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, 200, 0));
+                }
+            }
 
-                    if (stack.getDamage() < 402) {
-                        playerEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.WEAKNESS, 200, 1));
-                        playerEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, 200, 0));
-                    }
+            if (stack.isIn(goldenRegaliaItemsTag)) {
+                if (stack.getDamage() < 1006) {
+                    playerEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.WEAKNESS, 200, 0));
                 }
 
-                if (stack.isIn(netheritePlatedRegaliaItemsTag)) {
-                    if (stack.getDamage() < 1358) {
-                        playerEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.WEAKNESS, 200, 0));
-                    }
+                if (stack.getDamage() < 402) {
+                    playerEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.WEAKNESS, 200, 1));
+                    playerEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, 200, 0));
+                }
+            }
 
-                    if (stack.getDamage() < 452) {
-                        playerEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.WEAKNESS, 200, 1));
-                        playerEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, 200, 0));
-                    }
+            if (stack.isIn(netheritePlatedRegaliaItemsTag)) {
+                if (stack.getDamage() < 1358) {
+                    playerEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.WEAKNESS, 200, 0));
+                }
+
+                if (stack.getDamage() < 452) {
+                    playerEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.WEAKNESS, 200, 1));
+                    playerEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, 200, 0));
                 }
             }
         }
