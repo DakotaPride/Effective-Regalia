@@ -26,33 +26,33 @@ public class RegaliaItem extends Item implements Constants {
     public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
         if (entity instanceof PlayerEntity playerEntity && playerEntity.getOffHandStack() == stack) {
             if (stack.isIn(ironRegaliaItemsTag)) {
-                if (stack.getDamage() < 615) {
+                if (stack.getDamage() >= 409) {
                     playerEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.WEAKNESS, 200, 0));
                 }
 
-                if (stack.getDamage() < 256) {
+                if (stack.getDamage() >= 768) {
                     playerEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.WEAKNESS, 200, 1));
                     playerEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, 200, 0));
                 }
             }
 
             if (stack.isIn(goldenRegaliaItemsTag)) {
-                if (stack.getDamage() < 1006) {
+                if (stack.getDamage() >= 1006) {
                     playerEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.WEAKNESS, 200, 0));
                 }
 
-                if (stack.getDamage() < 402) {
+                if (stack.getDamage() >= 1610) {
                     playerEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.WEAKNESS, 200, 1));
                     playerEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, 200, 0));
                 }
             }
 
             if (stack.isIn(netheritePlatedRegaliaItemsTag)) {
-                if (stack.getDamage() < 1358) {
+                if (stack.getDamage() >= 1660) {
                     playerEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.WEAKNESS, 200, 0));
                 }
 
-                if (stack.getDamage() < 452) {
+                if (stack.getDamage() >= 2566) {
                     playerEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.WEAKNESS, 200, 1));
                     playerEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, 200, 0));
                 }
