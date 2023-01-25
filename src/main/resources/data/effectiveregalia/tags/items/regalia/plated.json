@@ -5,6 +5,14 @@
     "effectiveregalia:plated_regalia_night_vision",
     "effectiveregalia:plated_regalia_regeneration",
     "effectiveregalia:plated_regalia_saturation",
-    "effectiveregalia:plated_regalia_jump_boost"
+    "effectiveregalia:plated_regalia_jump_boost",
+
+    "effectiveregalia:plated_regalia_hunger",
+    "effectiveregalia:plated_regalia_poison",
+    "effectiveregalia:plated_regalia_wither",
+    "effectiveregalia:plated_regalia_weakness",
+    "effectiveregalia:plated_regalia_mining_fatigue",
+    "effectiveregalia:plated_regalia_fire",
+    "effectiveregalia:plated_regalia_blindness"
   ]
 }

@@ -5,6 +5,14 @@
     "effectiveregalia:golden_regalia_night_vision",
     "effectiveregalia:golden_regalia_regeneration",
     "effectiveregalia:golden_regalia_saturation",
-    "effectiveregalia:golden_regalia_jump_boost"
+    "effectiveregalia:golden_regalia_jump_boost",
+
+    "effectiveregalia:golden_regalia_hunger",
+    "effectiveregalia:golden_regalia_poison",
+    "effectiveregalia:golden_regalia_wither",
+    "effectiveregalia:golden_regalia_weakness",
+    "effectiveregalia:golden_regalia_mining_fatigue",
+    "effectiveregalia:golden_regalia_fire",
+    "effectiveregalia:golden_regalia_blindness"
   ]
 }

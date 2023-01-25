@@ -13,6 +13,7 @@ import net.dakotapride.effectiveRegalia.common.item.effect.SlowFallingRegaliaIte
 import net.dakotapride.effectiveRegalia.common.item.effect.SlowFallingRegaliaItem.NetheritePlatedSlowFallingRegalia;
 import net.dakotapride.effectiveRegalia.common.item.effect.StrengthRegaliaItem.GoldenStrengthRegalia;
 import net.dakotapride.effectiveRegalia.common.item.effect.StrengthRegaliaItem.NetheritePlatedStrengthRegalia;
+import net.dakotapride.effectiveRegalia.common.item.immune.HungerImmuneRegaliaItem;
 import net.dakotapride.effectiveRegalia.common.register.Constants;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
@@ -59,6 +60,8 @@ public abstract class LivingEntityMixin extends Entity implements Constants {
             } else if (getItem instanceof SlowFallingRegaliaItem) {
                 playerEntity.addStatusEffect(new StatusEffectInstance
                         (StatusEffects.SLOW_FALLING, 200, 0));
+            } else if (getItem instanceof HungerImmuneRegaliaItem) {
+                playerEntity.removeStatusEffect(StatusEffects.HUNGER);
             }
 
             if (getItem instanceof GoldenStrengthRegalia) {

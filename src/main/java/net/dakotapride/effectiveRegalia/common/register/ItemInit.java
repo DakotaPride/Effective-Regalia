@@ -44,6 +44,29 @@ public class ItemInit implements Constants {
     public static Item LEAPING_RELIC = new Item(new FabricItemSettings().group(ItemGroup.COMBAT));
     public static Item NIGHT_RELIC = new Item(new FabricItemSettings().group(ItemGroup.COMBAT));
 
+    public static RegaliaItem REGALIA_HUNGER = new SlowFallingRegaliaItem(new FabricItemSettings().maxDamage(1024).group(ItemGroup.COMBAT));
+    public static RegaliaItem REGALIA_HUNGER_GOLDEN = new GoldenSlowFallingRegalia(new FabricItemSettings().maxDamage(2012).group(ItemGroup.COMBAT));
+    public static RegaliaItem REGALIA_HUNGER_PLATED = new NetheritePlatedSlowFallingRegalia(new FabricItemSettings().maxDamage(3018).group(ItemGroup.COMBAT));
+    public static RegaliaItem REGALIA_POISON = new SlowFallingRegaliaItem(new FabricItemSettings().maxDamage(1024).group(ItemGroup.COMBAT));
+    public static RegaliaItem REGALIA_POISON_GOLDEN = new GoldenSlowFallingRegalia(new FabricItemSettings().maxDamage(2012).group(ItemGroup.COMBAT));
+    public static RegaliaItem REGALIA_POISON_PLATED = new NetheritePlatedSlowFallingRegalia(new FabricItemSettings().maxDamage(3018).group(ItemGroup.COMBAT));
+    public static RegaliaItem REGALIA_WITHER = new SlowFallingRegaliaItem(new FabricItemSettings().maxDamage(1024).group(ItemGroup.COMBAT));
+    public static RegaliaItem REGALIA_WITHER_GOLDEN = new GoldenSlowFallingRegalia(new FabricItemSettings().maxDamage(2012).group(ItemGroup.COMBAT));
+    public static RegaliaItem REGALIA_WITHER_PLATED = new NetheritePlatedSlowFallingRegalia(new FabricItemSettings().maxDamage(3018).group(ItemGroup.COMBAT));
+    public static RegaliaItem REGALIA_WEAKNESS = new SlowFallingRegaliaItem(new FabricItemSettings().maxDamage(1024).group(ItemGroup.COMBAT));
+    public static RegaliaItem REGALIA_WEAKNESS_GOLDEN = new GoldenSlowFallingRegalia(new FabricItemSettings().maxDamage(2012).group(ItemGroup.COMBAT));
+    public static RegaliaItem REGALIA_WEAKNESS_PLATED = new NetheritePlatedSlowFallingRegalia(new FabricItemSettings().maxDamage(3018).group(ItemGroup.COMBAT));
+    public static RegaliaItem REGALIA_MINING_FATIGUE = new SlowFallingRegaliaItem(new FabricItemSettings().maxDamage(1024).group(ItemGroup.COMBAT));
+    public static RegaliaItem REGALIA_MINING_FATIGUE_GOLDEN = new GoldenSlowFallingRegalia(new FabricItemSettings().maxDamage(2012).group(ItemGroup.COMBAT));
+    public static RegaliaItem REGALIA_MINING_FATIGUE_PLATED = new NetheritePlatedSlowFallingRegalia(new FabricItemSettings().maxDamage(3018).group(ItemGroup.COMBAT));
+    public static RegaliaItem REGALIA_FIRE = new SlowFallingRegaliaItem(new FabricItemSettings().maxDamage(1024).group(ItemGroup.COMBAT));
+    public static RegaliaItem REGALIA_FIRE_GOLDEN = new GoldenSlowFallingRegalia(new FabricItemSettings().maxDamage(2012).group(ItemGroup.COMBAT));
+    public static RegaliaItem REGALIA_FIRE_PLATED = new NetheritePlatedSlowFallingRegalia(new FabricItemSettings().maxDamage(3018).group(ItemGroup.COMBAT));
+    public static RegaliaItem REGALIA_BLINDNESS = new SlowFallingRegaliaItem(new FabricItemSettings().maxDamage(1024).group(ItemGroup.COMBAT));
+    public static RegaliaItem REGALIA_BLINDNESS_GOLDEN = new GoldenSlowFallingRegalia(new FabricItemSettings().maxDamage(2012).group(ItemGroup.COMBAT));
+    public static RegaliaItem REGALIA_BLINDNESS_PLATED = new NetheritePlatedSlowFallingRegalia(new FabricItemSettings().maxDamage(3018).group(ItemGroup.COMBAT));
+
+
     public static void registerRegaliaItems() {
         Registry.register(Registry.ITEM, new Identifier(modId, "regalia"), REGALIA);
         Registry.register(Registry.ITEM, new Identifier(modId, "golden_regalia"), REGALIA_GOLDEN);
@@ -66,6 +89,28 @@ public class ItemInit implements Constants {
         Registry.register(Registry.ITEM, new Identifier(modId, "regalia_slow_falling"), REGALIA_SLOW_FALLING);
         Registry.register(Registry.ITEM, new Identifier(modId, "golden_regalia_slow_falling"), REGALIA_SLOW_FALLING_GOLDEN);
         Registry.register(Registry.ITEM, new Identifier(modId, "plated_regalia_slow_falling"), REGALIA_SLOW_FALLING_PLATED);
+
+        Registry.register(Registry.ITEM, new Identifier(modId, "regalia_hunger"), REGALIA_HUNGER);
+        Registry.register(Registry.ITEM, new Identifier(modId, "golden_regalia_hunger"), REGALIA_HUNGER_GOLDEN);
+        Registry.register(Registry.ITEM, new Identifier(modId, "plated_regalia_hunger"), REGALIA_HUNGER_PLATED);
+        Registry.register(Registry.ITEM, new Identifier(modId, "regalia_poison"), REGALIA_POISON);
+        Registry.register(Registry.ITEM, new Identifier(modId, "golden_regalia_poison"), REGALIA_POISON_GOLDEN);
+        Registry.register(Registry.ITEM, new Identifier(modId, "plated_regalia_poison"), REGALIA_POISON_PLATED);
+        Registry.register(Registry.ITEM, new Identifier(modId, "regalia_wither"), REGALIA_WITHER);
+        Registry.register(Registry.ITEM, new Identifier(modId, "golden_regalia_wither"), REGALIA_WITHER_GOLDEN);
+        Registry.register(Registry.ITEM, new Identifier(modId, "plated_regalia_wither"), REGALIA_WITHER_PLATED);
+        Registry.register(Registry.ITEM, new Identifier(modId, "regalia_weakness"), REGALIA_WEAKNESS);
+        Registry.register(Registry.ITEM, new Identifier(modId, "golden_regalia_weakness"), REGALIA_WEAKNESS_GOLDEN);
+        Registry.register(Registry.ITEM, new Identifier(modId, "plated_regalia_weakness"), REGALIA_WEAKNESS_PLATED);
+        Registry.register(Registry.ITEM, new Identifier(modId, "regalia_mining_fatigue"), REGALIA_MINING_FATIGUE);
+        Registry.register(Registry.ITEM, new Identifier(modId, "golden_regalia_mining_fatigue"), REGALIA_MINING_FATIGUE_GOLDEN);
+        Registry.register(Registry.ITEM, new Identifier(modId, "plated_regalia_mining_fatigue"), REGALIA_MINING_FATIGUE_PLATED);
+        Registry.register(Registry.ITEM, new Identifier(modId, "regalia_fire"), REGALIA_FIRE);
+        Registry.register(Registry.ITEM, new Identifier(modId, "golden_regalia_fire"), REGALIA_FIRE_GOLDEN);
+        Registry.register(Registry.ITEM, new Identifier(modId, "plated_regalia_fire"), REGALIA_FIRE_PLATED);
+        Registry.register(Registry.ITEM, new Identifier(modId, "regalia_blindness"), REGALIA_BLINDNESS);
+        Registry.register(Registry.ITEM, new Identifier(modId, "golden_regalia_blindness"), REGALIA_BLINDNESS_GOLDEN);
+        Registry.register(Registry.ITEM, new Identifier(modId, "plated_regalia_blindness"), REGALIA_BLINDNESS_PLATED);
 
         Registry.register(Registry.ITEM, new Identifier(modId, "blazing_warrior"), BLAZING_RELIC);
         Registry.register(Registry.ITEM, new Identifier(modId, "golden_meal"), GOLDEN_RELIC);

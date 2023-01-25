@@ -1,12 +1,18 @@
 {
   "replace": false,
   "values": [
-    "effectiveregalia:regalia",
-
     "effectiveregalia:regalia_strength",
     "effectiveregalia:regalia_night_vision",
     "effectiveregalia:regalia_regeneration",
     "effectiveregalia:regalia_saturation",
-    "effectiveregalia:regalia_jump_boost"
+    "effectiveregalia:regalia_jump_boost",
+
+    "effectiveregalia:regalia_hunger",
+    "effectiveregalia:regalia_poison",
+    "effectiveregalia:regalia_wither",
+    "effectiveregalia:regalia_weakness",
+    "effectiveregalia:regalia_mining_fatigue",
+    "effectiveregalia:regalia_fire",
+    "effectiveregalia:regalia_blindness"
   ]
 }
