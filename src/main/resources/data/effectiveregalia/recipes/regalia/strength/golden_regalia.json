@@ -1,14 +1,21 @@
 {
-  "type": "minecraft:crafting_shapeless",
+  "type": "minecraft:crafting_shaped",
   "group": "strength_regalia",
-  "ingredients": [
-    {
-      "item": "effectiveregalia:golden_regalia"
-    },
-    {
-      "item": "effectiveregalia:blazing_warrior"
-    }
+  "pattern": [
+    "A#",
+    "Z "
   ],
+  "key": {
+    "#": {
+      "item": "minecraft:string"
+    },
+    "Z": {
+      "item": "effectiveregalia:blazing_warrior"
+    },
+    "A": {
+      "item": "effectiveregalia:golden_regalia"
+    }
+  },
   "result": {
     "item": "effectiveregalia:golden_regalia_strength",
     "count": 1

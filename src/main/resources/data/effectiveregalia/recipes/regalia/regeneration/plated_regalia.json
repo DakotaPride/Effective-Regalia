@@ -1,14 +1,21 @@
 {
-  "type": "minecraft:crafting_shapeless",
+  "type": "minecraft:crafting_shaped",
   "group": "regeneration_regalia",
-  "ingredients": [
-    {
-      "item": "effectiveregalia:plated_regalia"
-    },
-    {
-      "item": "effectiveregalia:crying_soul"
-    }
+  "pattern": [
+    "A#",
+    "Z "
   ],
+  "key": {
+    "#": {
+      "item": "minecraft:string"
+    },
+    "Z": {
+      "item": "effectiveregalia:crying_soul"
+    },
+    "A": {
+      "item": "effectiveregalia:plated_regalia"
+    }
+  },
   "result": {
     "item": "effectiveregalia:plated_regalia_regeneration",
     "count": 1

@@ -32,6 +32,14 @@
   "text.effectiveregalia.regalia.slow_falling": "Capability: Slow Falling",
   "text.effectiveregalia.regalia.none": "Capability: None",
 
+  "text.effectiveregalia.regalia.hunger": "Capability: Hunger Immunity",
+  "text.effectiveregalia.regalia.poison": "Capability: Poison Immunity",
+  "text.effectiveregalia.regalia.weakness": "Capability: Weakness Immunity",
+  "text.effectiveregalia.regalia.wither": "Capability: Wither Immunity",
+  "text.effectiveregalia.regalia.mining_fatigue": "Capability: Mining Fatigue Immunity",
+  "text.effectiveregalia.regalia.fire": "Capability: Fire Immunity",
+  "text.effectiveregalia.regalia.blindness": "Capability: Blindness Immunity",
+
   "item.effectiveregalia.blazing_warrior": "Relic Of The Blazing Warrior",
   "item.effectiveregalia.golden_meal": "Relic Of A Golden Meal",
   "item.effectiveregalia.crying_soul": "Relic Of The Crying Soul",

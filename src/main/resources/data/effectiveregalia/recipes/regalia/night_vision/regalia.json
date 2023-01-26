@@ -1,14 +1,21 @@
 {
-  "type": "minecraft:crafting_shapeless",
+  "type": "minecraft:crafting_shaped",
   "group": "night_vision_regalia",
-  "ingredients": [
-    {
-      "item": "effectiveregalia:regalia"
-    },
-    {
-      "item": "effectiveregalia:golden_meal"
-    }
+  "pattern": [
+    "A#",
+    "Z "
   ],
+  "key": {
+    "#": {
+      "item": "minecraft:string"
+    },
+    "Z": {
+      "item": "effectiveregalia:golden_meal"
+    },
+    "A": {
+      "item": "effectiveregalia:regalia"
+    }
+  },
   "result": {
     "item": "effectiveregalia:regalia_night_vision",
     "count": 1

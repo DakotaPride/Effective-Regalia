@@ -1,19 +1,21 @@
 package net.dakotapride.effectiveRegalia.mixin;
 
 import net.dakotapride.effectiveRegalia.common.item.effect.*;
-import net.dakotapride.effectiveRegalia.common.item.effect.JumpBoostRegaliaItem.GoldenJumpBoostRegalia;
-import net.dakotapride.effectiveRegalia.common.item.effect.JumpBoostRegaliaItem.NetheritePlatedJumpBoostRegalia;
-import net.dakotapride.effectiveRegalia.common.item.effect.NightVisionRegaliaItem.GoldenNightVisionRegalia;
-import net.dakotapride.effectiveRegalia.common.item.effect.NightVisionRegaliaItem.NetheritePlatedNightVisionRegalia;
-import net.dakotapride.effectiveRegalia.common.item.effect.RegenerationRegaliaItem.GoldenRegenerationRegalia;
-import net.dakotapride.effectiveRegalia.common.item.effect.RegenerationRegaliaItem.NetheritePlatedRegenerationRegalia;
-import net.dakotapride.effectiveRegalia.common.item.effect.SaturationRegaliaItem.GoldenSaturationRegalia;
-import net.dakotapride.effectiveRegalia.common.item.effect.SaturationRegaliaItem.NetheritePlatedSaturationRegalia;
-import net.dakotapride.effectiveRegalia.common.item.effect.SlowFallingRegaliaItem.GoldenSlowFallingRegalia;
-import net.dakotapride.effectiveRegalia.common.item.effect.SlowFallingRegaliaItem.NetheritePlatedSlowFallingRegalia;
-import net.dakotapride.effectiveRegalia.common.item.effect.StrengthRegaliaItem.GoldenStrengthRegalia;
-import net.dakotapride.effectiveRegalia.common.item.effect.StrengthRegaliaItem.NetheritePlatedStrengthRegalia;
-import net.dakotapride.effectiveRegalia.common.item.immune.HungerImmuneRegaliaItem;
+import net.dakotapride.effectiveRegalia.common.item.effect.JumpBoostRegaliaItem.*;
+import net.dakotapride.effectiveRegalia.common.item.effect.NightVisionRegaliaItem.*;
+import net.dakotapride.effectiveRegalia.common.item.effect.RegenerationRegaliaItem.*;
+import net.dakotapride.effectiveRegalia.common.item.effect.SaturationRegaliaItem.*;
+import net.dakotapride.effectiveRegalia.common.item.effect.SlowFallingRegaliaItem.*;
+import net.dakotapride.effectiveRegalia.common.item.effect.StrengthRegaliaItem.*;
+import net.dakotapride.effectiveRegalia.common.item.immune.HungerImmuneRegaliaItem.*;
+import net.dakotapride.effectiveRegalia.common.item.immune.PoisonImmuneRegaliaItem.*;
+import net.dakotapride.effectiveRegalia.common.item.immune.FireImmuneRegaliaItem.*;
+import net.dakotapride.effectiveRegalia.common.item.immune.BlindnessImmuneRegaliaItem.*;
+import net.dakotapride.effectiveRegalia.common.item.immune.MiningFatigueImmuneRegaliaItem.*;
+import net.dakotapride.effectiveRegalia.common.item.immune.WeaknessImmuneRegaliaItem.*;
+import net.dakotapride.effectiveRegalia.common.item.immune.FireImmuneRegaliaItem.*;
+import net.dakotapride.effectiveRegalia.common.item.immune.WitherImmuneRegaliaItem.*;
+import net.dakotapride.effectiveRegalia.common.item.immune.*;
 import net.dakotapride.effectiveRegalia.common.register.Constants;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
@@ -62,6 +64,18 @@ public abstract class LivingEntityMixin extends Entity implements Constants {
                         (StatusEffects.SLOW_FALLING, 200, 0));
             } else if (getItem instanceof HungerImmuneRegaliaItem) {
                 playerEntity.removeStatusEffect(StatusEffects.HUNGER);
+            } else if (getItem instanceof BlindnessImmuneRegaliaItem) {
+                playerEntity.removeStatusEffect(StatusEffects.BLINDNESS);
+            } else if (getItem instanceof MiningFatigueImmuneRegaliaItem) {
+                playerEntity.removeStatusEffect(StatusEffects.MINING_FATIGUE);
+            } else if (getItem instanceof PoisonImmuneRegaliaItem) {
+                playerEntity.removeStatusEffect(StatusEffects.POISON);
+            } else if (getItem instanceof WeaknessImmuneRegaliaItem) {
+                playerEntity.removeStatusEffect(StatusEffects.WEAKNESS);
+            } else if (getItem instanceof WitherImmuneRegaliaItem) {
+                playerEntity.removeStatusEffect(StatusEffects.WITHER);
+            } else if (getItem instanceof FireImmuneRegaliaItem) {
+                playerEntity.setFireTicks(0);
             }
 
             if (getItem instanceof GoldenStrengthRegalia) {
@@ -82,6 +96,20 @@ public abstract class LivingEntityMixin extends Entity implements Constants {
             } else if (getItem instanceof GoldenSlowFallingRegalia) {
                 playerEntity.addStatusEffect(new StatusEffectInstance
                         (StatusEffects.SLOW_FALLING, 200, 1));
+            } else if (getItem instanceof GoldenHungerImmuneRegalia) {
+                playerEntity.removeStatusEffect(StatusEffects.HUNGER);
+            } else if (getItem instanceof GoldenBlindnessImmuneRegalia) {
+                playerEntity.removeStatusEffect(StatusEffects.BLINDNESS);
+            } else if (getItem instanceof GoldenMiningFatigueImmuneRegalia) {
+                playerEntity.removeStatusEffect(StatusEffects.MINING_FATIGUE);
+            } else if (getItem instanceof GoldenPoisonImmuneRegalia) {
+                playerEntity.removeStatusEffect(StatusEffects.POISON);
+            } else if (getItem instanceof GoldenWeaknessImmuneRegalia) {
+                playerEntity.removeStatusEffect(StatusEffects.WEAKNESS);
+            } else if (getItem instanceof GoldenWitherImmuneRegalia) {
+                playerEntity.removeStatusEffect(StatusEffects.WITHER);
+            } else if (getItem instanceof GoldenFireImmuneRegalia) {
+                playerEntity.setFireTicks(0);
             }
 
             if (getItem instanceof NetheritePlatedStrengthRegalia) {
@@ -102,6 +130,20 @@ public abstract class LivingEntityMixin extends Entity implements Constants {
             } else if (getItem instanceof NetheritePlatedSlowFallingRegalia) {
                 playerEntity.addStatusEffect(new StatusEffectInstance
                         (StatusEffects.SLOW_FALLING, 200, 2));
+            } else if (getItem instanceof NetheritePlatedHungerImmuneRegalia) {
+                playerEntity.removeStatusEffect(StatusEffects.HUNGER);
+            } else if (getItem instanceof NetheritePlatedBlindnessImmuneRegalia) {
+                playerEntity.removeStatusEffect(StatusEffects.BLINDNESS);
+            } else if (getItem instanceof NetheritePlatedMiningFatigueImmuneRegalia) {
+                playerEntity.removeStatusEffect(StatusEffects.MINING_FATIGUE);
+            } else if (getItem instanceof NetheritePlatedPoisonImmuneRegalia) {
+                playerEntity.removeStatusEffect(StatusEffects.POISON);
+            } else if (getItem instanceof NetheritePlatedWeaknessImmuneRegalia) {
+                playerEntity.removeStatusEffect(StatusEffects.WEAKNESS);
+            } else if (getItem instanceof NetheritePlatedWitherImmuneRegalia) {
+                playerEntity.removeStatusEffect(StatusEffects.WITHER);
+            } else if (getItem instanceof NetheritePlatedFireImmuneRegalia) {
+                playerEntity.setFireTicks(0);
             }
         }
     }

@@ -2,6 +2,7 @@ package net.dakotapride.effectiveRegalia.common.register;
 
 import net.dakotapride.effectiveRegalia.common.item.base.RegaliaItem;
 import net.dakotapride.effectiveRegalia.common.item.effect.*;
+import net.dakotapride.effectiveRegalia.common.item.immune.*;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
@@ -14,6 +15,14 @@ import net.dakotapride.effectiveRegalia.common.item.effect.StrengthRegaliaItem.*
 import net.dakotapride.effectiveRegalia.common.item.effect.SaturationRegaliaItem.*;
 import net.dakotapride.effectiveRegalia.common.item.effect.JumpBoostRegaliaItem.*;
 import net.dakotapride.effectiveRegalia.common.item.effect.SlowFallingRegaliaItem.*;
+
+import net.dakotapride.effectiveRegalia.common.item.immune.HungerImmuneRegaliaItem.*;
+import net.dakotapride.effectiveRegalia.common.item.immune.PoisonImmuneRegaliaItem.*;
+import net.dakotapride.effectiveRegalia.common.item.immune.WitherImmuneRegaliaItem.*;
+import net.dakotapride.effectiveRegalia.common.item.immune.FireImmuneRegaliaItem.*;
+import net.dakotapride.effectiveRegalia.common.item.immune.WeaknessImmuneRegaliaItem.*;
+import net.dakotapride.effectiveRegalia.common.item.immune.MiningFatigueImmuneRegaliaItem.*;
+import net.dakotapride.effectiveRegalia.common.item.immune.BlindnessImmuneRegaliaItem.*;
 
 public class ItemInit implements Constants {
 
@@ -44,27 +53,27 @@ public class ItemInit implements Constants {
     public static Item LEAPING_RELIC = new Item(new FabricItemSettings().group(ItemGroup.COMBAT));
     public static Item NIGHT_RELIC = new Item(new FabricItemSettings().group(ItemGroup.COMBAT));
 
-    public static RegaliaItem REGALIA_HUNGER = new SlowFallingRegaliaItem(new FabricItemSettings().maxDamage(1024).group(ItemGroup.COMBAT));
-    public static RegaliaItem REGALIA_HUNGER_GOLDEN = new GoldenSlowFallingRegalia(new FabricItemSettings().maxDamage(2012).group(ItemGroup.COMBAT));
-    public static RegaliaItem REGALIA_HUNGER_PLATED = new NetheritePlatedSlowFallingRegalia(new FabricItemSettings().maxDamage(3018).group(ItemGroup.COMBAT));
-    public static RegaliaItem REGALIA_POISON = new SlowFallingRegaliaItem(new FabricItemSettings().maxDamage(1024).group(ItemGroup.COMBAT));
-    public static RegaliaItem REGALIA_POISON_GOLDEN = new GoldenSlowFallingRegalia(new FabricItemSettings().maxDamage(2012).group(ItemGroup.COMBAT));
-    public static RegaliaItem REGALIA_POISON_PLATED = new NetheritePlatedSlowFallingRegalia(new FabricItemSettings().maxDamage(3018).group(ItemGroup.COMBAT));
-    public static RegaliaItem REGALIA_WITHER = new SlowFallingRegaliaItem(new FabricItemSettings().maxDamage(1024).group(ItemGroup.COMBAT));
-    public static RegaliaItem REGALIA_WITHER_GOLDEN = new GoldenSlowFallingRegalia(new FabricItemSettings().maxDamage(2012).group(ItemGroup.COMBAT));
-    public static RegaliaItem REGALIA_WITHER_PLATED = new NetheritePlatedSlowFallingRegalia(new FabricItemSettings().maxDamage(3018).group(ItemGroup.COMBAT));
-    public static RegaliaItem REGALIA_WEAKNESS = new SlowFallingRegaliaItem(new FabricItemSettings().maxDamage(1024).group(ItemGroup.COMBAT));
-    public static RegaliaItem REGALIA_WEAKNESS_GOLDEN = new GoldenSlowFallingRegalia(new FabricItemSettings().maxDamage(2012).group(ItemGroup.COMBAT));
-    public static RegaliaItem REGALIA_WEAKNESS_PLATED = new NetheritePlatedSlowFallingRegalia(new FabricItemSettings().maxDamage(3018).group(ItemGroup.COMBAT));
-    public static RegaliaItem REGALIA_MINING_FATIGUE = new SlowFallingRegaliaItem(new FabricItemSettings().maxDamage(1024).group(ItemGroup.COMBAT));
-    public static RegaliaItem REGALIA_MINING_FATIGUE_GOLDEN = new GoldenSlowFallingRegalia(new FabricItemSettings().maxDamage(2012).group(ItemGroup.COMBAT));
-    public static RegaliaItem REGALIA_MINING_FATIGUE_PLATED = new NetheritePlatedSlowFallingRegalia(new FabricItemSettings().maxDamage(3018).group(ItemGroup.COMBAT));
-    public static RegaliaItem REGALIA_FIRE = new SlowFallingRegaliaItem(new FabricItemSettings().maxDamage(1024).group(ItemGroup.COMBAT));
-    public static RegaliaItem REGALIA_FIRE_GOLDEN = new GoldenSlowFallingRegalia(new FabricItemSettings().maxDamage(2012).group(ItemGroup.COMBAT));
-    public static RegaliaItem REGALIA_FIRE_PLATED = new NetheritePlatedSlowFallingRegalia(new FabricItemSettings().maxDamage(3018).group(ItemGroup.COMBAT));
-    public static RegaliaItem REGALIA_BLINDNESS = new SlowFallingRegaliaItem(new FabricItemSettings().maxDamage(1024).group(ItemGroup.COMBAT));
-    public static RegaliaItem REGALIA_BLINDNESS_GOLDEN = new GoldenSlowFallingRegalia(new FabricItemSettings().maxDamage(2012).group(ItemGroup.COMBAT));
-    public static RegaliaItem REGALIA_BLINDNESS_PLATED = new NetheritePlatedSlowFallingRegalia(new FabricItemSettings().maxDamage(3018).group(ItemGroup.COMBAT));
+    public static RegaliaItem REGALIA_HUNGER = new HungerImmuneRegaliaItem(new FabricItemSettings().maxDamage(1024).group(ItemGroup.COMBAT));
+    public static RegaliaItem REGALIA_HUNGER_GOLDEN = new GoldenHungerImmuneRegalia(new FabricItemSettings().maxDamage(2012).group(ItemGroup.COMBAT));
+    public static RegaliaItem REGALIA_HUNGER_PLATED = new NetheritePlatedHungerImmuneRegalia(new FabricItemSettings().maxDamage(3018).group(ItemGroup.COMBAT));
+    public static RegaliaItem REGALIA_POISON = new PoisonImmuneRegaliaItem(new FabricItemSettings().maxDamage(1024).group(ItemGroup.COMBAT));
+    public static RegaliaItem REGALIA_POISON_GOLDEN = new GoldenPoisonImmuneRegalia(new FabricItemSettings().maxDamage(2012).group(ItemGroup.COMBAT));
+    public static RegaliaItem REGALIA_POISON_PLATED = new NetheritePlatedPoisonImmuneRegalia(new FabricItemSettings().maxDamage(3018).group(ItemGroup.COMBAT));
+    public static RegaliaItem REGALIA_WITHER = new WitherImmuneRegaliaItem(new FabricItemSettings().maxDamage(1024).group(ItemGroup.COMBAT));
+    public static RegaliaItem REGALIA_WITHER_GOLDEN = new GoldenWitherImmuneRegalia(new FabricItemSettings().maxDamage(2012).group(ItemGroup.COMBAT));
+    public static RegaliaItem REGALIA_WITHER_PLATED = new NetheritePlatedWitherImmuneRegalia(new FabricItemSettings().maxDamage(3018).group(ItemGroup.COMBAT));
+    public static RegaliaItem REGALIA_WEAKNESS = new WeaknessImmuneRegaliaItem(new FabricItemSettings().maxDamage(1024).group(ItemGroup.COMBAT));
+    public static RegaliaItem REGALIA_WEAKNESS_GOLDEN = new GoldenWeaknessImmuneRegalia(new FabricItemSettings().maxDamage(2012).group(ItemGroup.COMBAT));
+    public static RegaliaItem REGALIA_WEAKNESS_PLATED = new NetheritePlatedWeaknessImmuneRegalia(new FabricItemSettings().maxDamage(3018).group(ItemGroup.COMBAT));
+    public static RegaliaItem REGALIA_MINING_FATIGUE = new MiningFatigueImmuneRegaliaItem(new FabricItemSettings().maxDamage(1024).group(ItemGroup.COMBAT));
+    public static RegaliaItem REGALIA_MINING_FATIGUE_GOLDEN = new GoldenMiningFatigueImmuneRegalia(new FabricItemSettings().maxDamage(2012).group(ItemGroup.COMBAT));
+    public static RegaliaItem REGALIA_MINING_FATIGUE_PLATED = new NetheritePlatedMiningFatigueImmuneRegalia(new FabricItemSettings().maxDamage(3018).group(ItemGroup.COMBAT));
+    public static RegaliaItem REGALIA_FIRE = new FireImmuneRegaliaItem(new FabricItemSettings().maxDamage(1024).group(ItemGroup.COMBAT));
+    public static RegaliaItem REGALIA_FIRE_GOLDEN = new GoldenFireImmuneRegalia(new FabricItemSettings().maxDamage(2012).group(ItemGroup.COMBAT));
+    public static RegaliaItem REGALIA_FIRE_PLATED = new NetheritePlatedFireImmuneRegalia(new FabricItemSettings().maxDamage(3018).group(ItemGroup.COMBAT));
+    public static RegaliaItem REGALIA_BLINDNESS = new BlindnessImmuneRegaliaItem(new FabricItemSettings().maxDamage(1024).group(ItemGroup.COMBAT));
+    public static RegaliaItem REGALIA_BLINDNESS_GOLDEN = new GoldenBlindnessImmuneRegalia(new FabricItemSettings().maxDamage(2012).group(ItemGroup.COMBAT));
+    public static RegaliaItem REGALIA_BLINDNESS_PLATED = new NetheritePlatedBlindnessImmuneRegalia(new FabricItemSettings().maxDamage(3018).group(ItemGroup.COMBAT));
 
 
     public static void registerRegaliaItems() {

@@ -1,14 +1,21 @@
 {
-  "type": "minecraft:crafting_shapeless",
+  "type": "minecraft:crafting_shaped",
   "group": "jump_boost_regalia",
-  "ingredients": [
-    {
-      "item": "effectiveregalia:regalia"
-    },
-    {
-      "item": "effectiveregalia:leaping_contender"
-    }
+  "pattern": [
+    "A#",
+    "Z "
   ],
+  "key": {
+    "#": {
+      "item": "minecraft:string"
+    },
+    "Z": {
+      "item": "effectiveregalia:leaping_contender"
+    },
+    "A": {
+      "item": "effectiveregalia:regalia"
+    }
+  },
   "result": {
     "item": "effectiveregalia:regalia_jump_boost",
     "count": 1

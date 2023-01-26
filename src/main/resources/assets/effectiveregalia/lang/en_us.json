@@ -32,9 +32,17 @@
   "text.effectiveregalia.regalia.slow_falling": "Capability: Slow Falling",
   "text.effectiveregalia.regalia.none": "Capability: None",
 
-  "item.effectiveregalia.blazing_warrior": "Capability: Night Vision",
-  "item.effectiveregalia.golden_meal": "Capability: Regeneration",
-  "item.effectiveregalia.crying_soul": "Capability: Saturation",
-  "item.effectiveregalia.leaping_contender": "Capability: Strength",
-  "item.effectiveregalia.night_sky": "Capability: Slow Falling"
+  "text.effectiveregalia.regalia.hunger": "Capability: Hunger Immunity",
+  "text.effectiveregalia.regalia.poison": "Capability: Poison Immunity",
+  "text.effectiveregalia.regalia.weakness": "Capability: Weakness Immunity",
+  "text.effectiveregalia.regalia.wither": "Capability: Wither Immunity",
+  "text.effectiveregalia.regalia.mining_fatigue": "Capability: Mining Fatigue Immunity",
+  "text.effectiveregalia.regalia.fire": "Capability: Fire Immunity",
+  "text.effectiveregalia.regalia.blindness": "Capability: Blindness Immunity",
+
+  "item.effectiveregalia.blazing_warrior": "Relic Of The Blazing Warrior",
+  "item.effectiveregalia.golden_meal": "Relic Of A Golden Meal",
+  "item.effectiveregalia.crying_soul": "Relic Of The Crying Soul",
+  "item.effectiveregalia.leaping_contender": "Relic Of The Leaping Contender",
+  "item.effectiveregalia.night_sky": "Relic Of The Night Sky"
 }
