@@ -74,7 +74,12 @@ public class ItemInit implements Constants {
     public static RegaliaItem REGALIA_BLINDNESS = new BlindnessImmuneRegaliaItem(new FabricItemSettings().maxDamage(1024).group(ItemGroup.COMBAT));
     public static RegaliaItem REGALIA_BLINDNESS_GOLDEN = new GoldenBlindnessImmuneRegalia(new FabricItemSettings().maxDamage(2012).group(ItemGroup.COMBAT));
     public static RegaliaItem REGALIA_BLINDNESS_PLATED = new NetheritePlatedBlindnessImmuneRegalia(new FabricItemSettings().maxDamage(3018).group(ItemGroup.COMBAT));
-
+    public static Item STARVING_RELIC = new Item(new FabricItemSettings().group(ItemGroup.MISC));
+    public static Item VENOMOUS_RELIC = new Item(new FabricItemSettings().group(ItemGroup.MISC));
+    public static Item DECAYING_RELIC = new Item(new FabricItemSettings().group(ItemGroup.MISC));
+    public static Item WEAKENED_RELIC = new Item(new FabricItemSettings().group(ItemGroup.MISC));
+    public static Item OCEANIC_RELIC = new Item(new FabricItemSettings().group(ItemGroup.MISC));
+    public static Item UNFORESEEN_RELIC = new Item(new FabricItemSettings().group(ItemGroup.MISC));
 
     public static void registerRegaliaItems() {
         Registry.register(Registry.ITEM, new Identifier(modId, "regalia"), REGALIA);
@@ -126,6 +131,13 @@ public class ItemInit implements Constants {
         Registry.register(Registry.ITEM, new Identifier(modId, "crying_soul"), CRYING_RELIC);
         Registry.register(Registry.ITEM, new Identifier(modId, "leaping_contender"), LEAPING_RELIC);
         Registry.register(Registry.ITEM, new Identifier(modId, "night_sky"), NIGHT_RELIC);
+
+        Registry.register(Registry.ITEM, new Identifier(modId, "starving_servant"), STARVING_RELIC);
+        Registry.register(Registry.ITEM, new Identifier(modId, "venomous_soldier"), VENOMOUS_RELIC);
+        Registry.register(Registry.ITEM, new Identifier(modId, "decaying_wound"), DECAYING_RELIC);
+        Registry.register(Registry.ITEM, new Identifier(modId, "weakened_moon"), WEAKENED_RELIC);
+        Registry.register(Registry.ITEM, new Identifier(modId, "oceanic_currents"), OCEANIC_RELIC);
+        Registry.register(Registry.ITEM, new Identifier(modId, "unforeseen"), UNFORESEEN_RELIC);
     }
 
 }
