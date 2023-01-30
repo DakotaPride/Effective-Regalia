@@ -47,11 +47,11 @@ public class ItemInit implements Constants {
     public static RegaliaItem REGALIA_SLOW_FALLING = new SlowFallingRegaliaItem(new FabricItemSettings().maxDamage(1024).group(ItemGroup.COMBAT));
     public static RegaliaItem REGALIA_SLOW_FALLING_GOLDEN = new GoldenSlowFallingRegalia(new FabricItemSettings().maxDamage(2012).group(ItemGroup.COMBAT));
     public static RegaliaItem REGALIA_SLOW_FALLING_PLATED = new NetheritePlatedSlowFallingRegalia(new FabricItemSettings().maxDamage(3018).group(ItemGroup.COMBAT));
-    public static Item BLAZING_RELIC = new Item(new FabricItemSettings().group(ItemGroup.COMBAT));
-    public static Item GOLDEN_RELIC = new Item(new FabricItemSettings().group(ItemGroup.COMBAT));
-    public static Item CRYING_RELIC = new Item(new FabricItemSettings().group(ItemGroup.COMBAT));
-    public static Item LEAPING_RELIC = new Item(new FabricItemSettings().group(ItemGroup.COMBAT));
-    public static Item NIGHT_RELIC = new Item(new FabricItemSettings().group(ItemGroup.COMBAT));
+    public static Item BLAZING_RELIC = new Item(new FabricItemSettings().group(ItemGroup.MISC));
+    public static Item GOLDEN_RELIC = new Item(new FabricItemSettings().group(ItemGroup.MISC));
+    public static Item CRYING_RELIC = new Item(new FabricItemSettings().group(ItemGroup.MISC));
+    public static Item LEAPING_RELIC = new Item(new FabricItemSettings().group(ItemGroup.MISC));
+    public static Item NIGHT_RELIC = new Item(new FabricItemSettings().group(ItemGroup.MISC));
 
     public static RegaliaItem REGALIA_HUNGER = new HungerImmuneRegaliaItem(new FabricItemSettings().maxDamage(1024).group(ItemGroup.COMBAT));
     public static RegaliaItem REGALIA_HUNGER_GOLDEN = new GoldenHungerImmuneRegalia(new FabricItemSettings().maxDamage(2012).group(ItemGroup.COMBAT));
