@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "regalia_relic",
+  "pattern": [
+    "###",
+    "#X#",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:wither_skeleton_skull"
+    },
+    "X": {
+      "item": "minecraft:soul_sand"
+    }
+  },
+  "result": {
+    "item": "effectiveregalia:decaying_wound",
+    "count": 1
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "weakness_regalia",
+  "pattern": [
+    "A#",
+    "Z "
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:string"
+    },
+    "Z": {
+      "item": "effectiveregalia:weakened_moon"
+    },
+    "A": {
+      "item": "effectiveregalia:golden_regalia"
+    }
+  },
+  "result": {
+    "item": "effectiveregalia:golden_regalia_weakness",
+    "count": 1
+  }
+}
