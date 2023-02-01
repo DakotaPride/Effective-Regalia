@@ -20,6 +20,7 @@ import net.dakotapride.effectiveRegalia.common.register.Constants;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
@@ -37,6 +38,21 @@ public abstract class LivingEntityMixin extends Entity implements Constants {
 
     public LivingEntityMixin(EntityType<?> type, World world) {
         super(type, world);
+    }
+
+    @Inject(method = "damage", at = @At("HEAD"), cancellable = true)
+    private void damage(DamageSource source, float amount, CallbackInfoReturnable<Boolean> cir) {
+        if (livingEntity instanceof PlayerEntity playerEntity) {
+            Item getItem = playerEntity.getOffHandStack().getItem();
+
+            if (source.isFire() && getItem instanceof FireImmuneRegaliaItem) {
+                cir.setReturnValue(false);
+            } else if (source.isFire() && getItem instanceof GoldenFireImmuneRegalia) {
+                cir.setReturnValue(false);
+            } else if (source.isFire() && getItem instanceof NetheritePlatedFireImmuneRegalia) {
+                cir.setReturnValue(false);
+            }
+        }
     }
 
     @Inject(method = "hasStatusEffect", at = @At("HEAD"))
@@ -74,8 +90,6 @@ public abstract class LivingEntityMixin extends Entity implements Constants {
                 playerEntity.removeStatusEffect(StatusEffects.WEAKNESS);
             } else if (getItem instanceof WitherImmuneRegaliaItem) {
                 playerEntity.removeStatusEffect(StatusEffects.WITHER);
-            } else if (getItem instanceof FireImmuneRegaliaItem) {
-                playerEntity.setFireTicks(0);
             }
 
             if (getItem instanceof GoldenStrengthRegalia) {
@@ -108,8 +122,6 @@ public abstract class LivingEntityMixin extends Entity implements Constants {
                 playerEntity.removeStatusEffect(StatusEffects.WEAKNESS);
             } else if (getItem instanceof GoldenWitherImmuneRegalia) {
                 playerEntity.removeStatusEffect(StatusEffects.WITHER);
-            } else if (getItem instanceof GoldenFireImmuneRegalia) {
-                playerEntity.setFireTicks(0);
             }
 
             if (getItem instanceof NetheritePlatedStrengthRegalia) {
@@ -142,8 +154,6 @@ public abstract class LivingEntityMixin extends Entity implements Constants {
                 playerEntity.removeStatusEffect(StatusEffects.WEAKNESS);
             } else if (getItem instanceof NetheritePlatedWitherImmuneRegalia) {
                 playerEntity.removeStatusEffect(StatusEffects.WITHER);
-            } else if (getItem instanceof NetheritePlatedFireImmuneRegalia) {
-                playerEntity.setFireTicks(0);
             }
         }
     }
