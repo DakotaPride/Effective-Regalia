@@ -29,7 +29,7 @@ public class HungerImmuneRegaliaItem extends RegaliaItem {
 
     @Override
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
-        tooltipText = "text.effectiveregalia.regalia.strength";
+        tooltipText = "text.effectiveregalia.regalia.hunger";
 
         super.appendTooltip(stack, world, tooltip, context);
     }

@@ -3,7 +3,7 @@
   "group": "jump_boost_regalia",
   "pattern": [
     "A#",
-    "ZX"
+    "Z "
   ],
   "key": {
     "#": {
@@ -14,9 +14,6 @@
     },
     "A": {
       "item": "effectiveregalia:plated_regalia"
-    },
-    "X": {
-      "item": "minecraft:blackstone"
     }
   },
   "result": {
