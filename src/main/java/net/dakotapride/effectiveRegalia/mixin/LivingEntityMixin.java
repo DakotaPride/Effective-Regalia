@@ -13,9 +13,9 @@ import net.dakotapride.effectiveRegalia.common.item.immune.FireImmuneRegaliaItem
 import net.dakotapride.effectiveRegalia.common.item.immune.BlindnessImmuneRegaliaItem.*;
 import net.dakotapride.effectiveRegalia.common.item.immune.MiningFatigueImmuneRegaliaItem.*;
 import net.dakotapride.effectiveRegalia.common.item.immune.WeaknessImmuneRegaliaItem.*;
-import net.dakotapride.effectiveRegalia.common.item.immune.FireImmuneRegaliaItem.*;
 import net.dakotapride.effectiveRegalia.common.item.immune.WitherImmuneRegaliaItem.*;
 import net.dakotapride.effectiveRegalia.common.item.immune.*;
+import net.dakotapride.effectiveRegalia.common.item.resistant.IllagerRegaliaItem;
 import net.dakotapride.effectiveRegalia.common.register.Constants;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
@@ -24,8 +24,12 @@ import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
+import net.minecraft.entity.mob.HuskEntity;
+import net.minecraft.entity.mob.IllagerEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
+import net.minecraft.server.network.ServerPlayerEntity;
+import net.minecraft.stat.Stats;
 import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -40,24 +44,50 @@ public abstract class LivingEntityMixin extends Entity implements Constants {
         super(type, world);
     }
 
-    @Inject(method = "damage", at = @At("HEAD"), cancellable = true)
-    private void damage(DamageSource source, float amount, CallbackInfoReturnable<Boolean> cir) {
-        if (livingEntity instanceof PlayerEntity playerEntity) {
+    @Inject(method = "modifyAppliedDamage", at = @At("HEAD"))
+    private void modifyAppliedDamage(DamageSource source, float amount, CallbackInfoReturnable<Float> cir) {
+        int i;
+        if (livingEntity instanceof ServerPlayerEntity playerEntity) {
             Item getItem = playerEntity.getOffHandStack().getItem();
 
-            if (source.isFire() && getItem instanceof FireImmuneRegaliaItem) {
-                cir.setReturnValue(false);
-            } else if (source.isFire() && getItem instanceof GoldenFireImmuneRegalia) {
-                cir.setReturnValue(false);
-            } else if (source.isFire() && getItem instanceof NetheritePlatedFireImmuneRegalia) {
-                cir.setReturnValue(false);
+            if (getItem instanceof IllagerRegaliaItem && source.getAttacker() instanceof IllagerEntity) {
+                i = 5;
+                int j = 25 - i;
+                float f = amount * (float)j;
+                float g = amount;
+                amount = Math.max(f / 25.0F, 0.0F);
+                float h = g - amount;
+                if (h > 0.0F && h < 3.4028235E37F) {
+                    if (livingEntity instanceof ServerPlayerEntity) {
+                        ((ServerPlayerEntity)livingEntity).increaseStat(Stats.DAMAGE_RESISTED, Math.round(h * 10.0F));
+                    } else if (source.getAttacker() instanceof ServerPlayerEntity) {
+                        ((ServerPlayerEntity)source.getAttacker()).increaseStat(Stats.DAMAGE_DEALT_RESISTED, Math.round(h * 10.0F));
+                    }
+                }
+            }
+        }
+    }
+
+    @Inject(method = "damage", at = @At("HEAD"), cancellable = true)
+    private void damage(DamageSource source, float amount, CallbackInfoReturnable<Boolean> cir) {
+        if (livingEntity instanceof ServerPlayerEntity playerEntity) {
+            Item getItem = playerEntity.getOffHandStack().getItem();
+
+            if (source.isFire()) {
+                if (getItem instanceof FireImmuneRegaliaItem) {
+                    cir.setReturnValue(false);
+                } else if (getItem instanceof GoldenFireImmuneRegalia) {
+                    cir.setReturnValue(false);
+                } else if (getItem instanceof NetheritePlatedFireImmuneRegalia) {
+                    cir.setReturnValue(false);
+                }
             }
         }
     }
 
     @Inject(method = "hasStatusEffect", at = @At("HEAD"))
     private void hasStatusEffect(StatusEffect effect, CallbackInfoReturnable<Boolean> cir) {
-        if (livingEntity instanceof PlayerEntity playerEntity) {
+        if (livingEntity instanceof ServerPlayerEntity playerEntity) {
             Item getItem = playerEntity.getOffHandStack().getItem();
 
             if (getItem instanceof StrengthRegaliaItem) {

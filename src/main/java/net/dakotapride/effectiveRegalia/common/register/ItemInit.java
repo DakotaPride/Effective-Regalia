@@ -3,6 +3,7 @@ package net.dakotapride.effectiveRegalia.common.register;
 import net.dakotapride.effectiveRegalia.common.item.base.RegaliaItem;
 import net.dakotapride.effectiveRegalia.common.item.effect.*;
 import net.dakotapride.effectiveRegalia.common.item.immune.*;
+import net.dakotapride.effectiveRegalia.common.item.resistant.IllagerRegaliaItem;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
@@ -81,6 +82,18 @@ public class ItemInit implements Constants {
     public static Item OCEANIC_RELIC = new Item(new FabricItemSettings().group(ItemGroup.MISC));
     public static Item UNFORESEEN_RELIC = new Item(new FabricItemSettings().group(ItemGroup.MISC));
 
+    public static RegaliaItem REGALIA_ILLAGER_VOID = new IllagerRegaliaItem(new FabricItemSettings().maxDamage(4026).group(ItemGroup.COMBAT));
+    //public static RegaliaItem REGALIA_UNDEAD_VOID = new UndeadRegaliaItem(new FabricItemSettings().maxDamage(1024).group(ItemGroup.COMBAT));
+    //public static RegaliaItem REGALIA_PLAYER_VOID = new PlayerRegaliaItem(new FabricItemSettings().maxDamage(2012).group(ItemGroup.COMBAT));
+    //public static RegaliaItem REGALIA_ENDER_VOID = new EnderRegaliaItem(new FabricItemSettings().maxDamage(3018).group(ItemGroup.COMBAT));
+    //public static RegaliaItem REGALIA_ARTHROPOD_VOID = new ArthropodRegaliaItem(new FabricItemSettings().maxDamage(1024).group(ItemGroup.COMBAT));
+    //public static RegaliaItem REGALIA_NETHER_VOID = new NetherRegaliaItem(new FabricItemSettings().maxDamage(2012).group(ItemGroup.COMBAT));
+    //public static Item HORRID_RELIC = new Item(new FabricItemSettings().group(ItemGroup.MISC));
+    //public static Item UNDERLYING_RELIC = new Item(new FabricItemSettings().group(ItemGroup.MISC));
+    //public static Item SELF_RELIC = new Item(new FabricItemSettings().group(ItemGroup.MISC));
+    //public static Item NEVER_RELIC = new Item(new FabricItemSettings().group(ItemGroup.MISC));
+    //public static Item SWELETERING_RELIC = new Item(new FabricItemSettings().group(ItemGroup.MISC));
+
     public static void registerRegaliaItems() {
         Registry.register(Registry.ITEM, new Identifier(modId, "regalia"), REGALIA);
         Registry.register(Registry.ITEM, new Identifier(modId, "golden_regalia"), REGALIA_GOLDEN);
@@ -125,6 +138,8 @@ public class ItemInit implements Constants {
         Registry.register(Registry.ITEM, new Identifier(modId, "regalia_blindness"), REGALIA_BLINDNESS);
         Registry.register(Registry.ITEM, new Identifier(modId, "golden_regalia_blindness"), REGALIA_BLINDNESS_GOLDEN);
         Registry.register(Registry.ITEM, new Identifier(modId, "plated_regalia_blindness"), REGALIA_BLINDNESS_PLATED);
+
+        Registry.register(Registry.ITEM, new Identifier(modId, "void_regalia_illager"), REGALIA_ILLAGER_VOID);
 
         Registry.register(Registry.ITEM, new Identifier(modId, "blazing_warrior"), BLAZING_RELIC);
         Registry.register(Registry.ITEM, new Identifier(modId, "golden_meal"), GOLDEN_RELIC);
