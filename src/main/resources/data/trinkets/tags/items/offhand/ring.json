@@ -7,6 +7,7 @@
     "#effectiveregalia:regalia/effect/saturation",
     "#effectiveregalia:regalia/effect/jump_boost",
     "#effectiveregalia:regalia/effect/slow_falling",
+    "#effectiveregalia:regalia/effect/health",
 
     "#effectiveregalia:regalia/immune/blindness",
     "#effectiveregalia:regalia/immune/fire",

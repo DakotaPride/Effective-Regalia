@@ -59,6 +59,36 @@ public class BaseRegaliaTrinketItem extends TrinketItem implements Constants {
 
                 tooltip.add(Text.translatable(tooltipText).formatted(Formatting.BLUE));
             }
+
+            if (stack.isIn(isBlindnessImmunityRegalia)) {
+                tooltipText = "text.effectiveregalia.regalia.blindness";
+
+                tooltip.add(Text.translatable(tooltipText).formatted(Formatting.BLUE));
+            } else if (stack.isIn(isFireImmunityRegalia)) {
+                tooltipText = "text.effectiveregalia.regalia.fire";
+
+                tooltip.add(Text.translatable(tooltipText).formatted(Formatting.BLUE));
+            } else if (stack.isIn(isHungerImmunityRegalia)) {
+                tooltipText = "text.effectiveregalia.regalia.hunger";
+
+                tooltip.add(Text.translatable(tooltipText).formatted(Formatting.BLUE));
+            } else if (stack.isIn(isMiningFatigueImmunityRegalia)) {
+                tooltipText = "text.effectiveregalia.regalia.mining_fatigue";
+
+                tooltip.add(Text.translatable(tooltipText).formatted(Formatting.BLUE));
+            } else if (stack.isIn(isPoisonImmunityRegalia)) {
+                tooltipText = "text.effectiveregalia.regalia.poison";
+
+                tooltip.add(Text.translatable(tooltipText).formatted(Formatting.BLUE));
+            } else if (stack.isIn(isWeaknessImmunityRegalia)) {
+                tooltipText = "text.effectiveregalia.regalia.weakness";
+
+                tooltip.add(Text.translatable(tooltipText).formatted(Formatting.BLUE));
+            } else if (stack.isIn(isWitherImmunityRegalia)) {
+                tooltipText = "text.effectiveregalia.regalia.wither";
+
+                tooltip.add(Text.translatable(tooltipText).formatted(Formatting.BLUE));
+            }
         }
     }
 

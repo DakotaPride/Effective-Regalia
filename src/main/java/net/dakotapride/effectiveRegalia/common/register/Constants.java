@@ -21,4 +21,12 @@ public interface Constants {
     TagKey<Item> isJumpBoostRegalia = TagKey.of(Registry.ITEM_KEY, new Identifier(modId, "regalia/effect/jump_boost"));
     TagKey<Item> isSlowFallingRegalia = TagKey.of(Registry.ITEM_KEY, new Identifier(modId, "regalia/effect/slow_falling"));
 
+    TagKey<Item> isBlindnessImmunityRegalia = TagKey.of(Registry.ITEM_KEY, new Identifier(modId, "regalia/immune/blindness"));
+    TagKey<Item> isFireImmunityRegalia = TagKey.of(Registry.ITEM_KEY, new Identifier(modId, "regalia/immune/fire"));
+    TagKey<Item> isHungerImmunityRegalia = TagKey.of(Registry.ITEM_KEY, new Identifier(modId, "regalia/immune/hunger"));
+    TagKey<Item> isMiningFatigueImmunityRegalia = TagKey.of(Registry.ITEM_KEY, new Identifier(modId, "regalia/immune/mining_fatigue"));
+    TagKey<Item> isPoisonImmunityRegalia = TagKey.of(Registry.ITEM_KEY, new Identifier(modId, "regalia/immune/poison"));
+    TagKey<Item> isWeaknessImmunityRegalia = TagKey.of(Registry.ITEM_KEY, new Identifier(modId, "regalia/immune/weakness"));
+    TagKey<Item> isWitherImmunityRegalia = TagKey.of(Registry.ITEM_KEY, new Identifier(modId, "regalia/immune/wither"));
+
 }

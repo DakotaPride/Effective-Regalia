@@ -3,6 +3,7 @@ package net.dakotapride.effectiveRegalia.common.register;
 import net.dakotapride.effectiveRegalia.common.item.base.BaseRegaliaTrinketItem;
 import net.dakotapride.effectiveRegalia.common.item.effect.*;
 import net.dakotapride.effectiveRegalia.common.item.immune.*;
+import net.dakotapride.effectiveRegalia.common.item.misc.HealthBoostRegaliaTrinketItem;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.util.Identifier;
@@ -128,6 +129,11 @@ public class ItemInit implements Constants {
             (new FabricItemSettings().maxDamage(1526).group(ItemGroup.COMBAT));
 
 
+    // Misc
+
+    public static BaseRegaliaTrinketItem REGALIA_HEALTH = new HealthBoostRegaliaTrinketItem
+            (new FabricItemSettings().maxDamage(748).group(ItemGroup.COMBAT));
+
     /*
 
     public static RegaliaItem REGALIA_ILLAGER_VOID = new IllagerRegaliaItem(new FabricItemSettings().maxDamage(4026).group(ItemGroup.COMBAT));
@@ -197,6 +203,8 @@ public class ItemInit implements Constants {
         Registry.register(Registry.ITEM, new Identifier(modId, "regalia_fire"), REGALIA_FIRE);
         Registry.register(Registry.ITEM, new Identifier(modId, "golden_regalia_fire"), REGALIA_FIRE_GOLDEN);
         Registry.register(Registry.ITEM, new Identifier(modId, "plated_regalia_fire"), REGALIA_FIRE_PLATED);
+
+        Registry.register(Registry.ITEM, new Identifier(modId, "regalia_health"), REGALIA_HEALTH);
     }
 
 }
