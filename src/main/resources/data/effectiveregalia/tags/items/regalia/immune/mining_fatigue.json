@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "effectiveregalia:regalia_mining_fatigue",
+    "effectiveregalia:golden_regalia_mining_fatigue",
+    "effectiveregalia:plated_regalia_mining_fatigue"
+  ]
+}

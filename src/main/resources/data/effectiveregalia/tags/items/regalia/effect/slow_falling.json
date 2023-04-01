@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "effectiveregalia:regalia_slow_falling",
+    "effectiveregalia:golden_regalia_slow_falling",
+    "effectiveregalia:plated_regalia_slow_falling"
+  ]
+}

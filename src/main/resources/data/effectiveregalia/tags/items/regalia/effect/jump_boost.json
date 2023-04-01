@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "effectiveregalia:regalia_jump_boost",
+    "effectiveregalia:golden_regalia_jump_boost",
+    "effectiveregalia:plated_regalia_jump_boost"
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "effectiveregalia:regalia_saturation",
+    "effectiveregalia:golden_regalia_saturation",
+    "effectiveregalia:plated_regalia_saturation"
+  ]
+}

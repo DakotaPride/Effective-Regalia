@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "effectiveregalia:regalia_weakness",
+    "effectiveregalia:golden_regalia_weakness",
+    "effectiveregalia:plated_regalia_weakness"
+  ]
+}

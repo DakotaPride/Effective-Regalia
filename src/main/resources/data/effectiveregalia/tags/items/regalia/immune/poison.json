@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "effectiveregalia:regalia_poison",
+    "effectiveregalia:golden_regalia_poison",
+    "effectiveregalia:plated_regalia_poison"
+  ]
+}

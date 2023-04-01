@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "effectiveregalia:regalia_blindness",
+    "effectiveregalia:golden_regalia_blindness",
+    "effectiveregalia:plated_regalia_blindness"
+  ]
+}

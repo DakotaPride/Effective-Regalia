@@ -1,0 +1,19 @@
+{
+  "replace": false,
+  "values": [
+    "#effectiveregalia:regalia/effect/strength",
+    "#effectiveregalia:regalia/effect/night_vision",
+    "#effectiveregalia:regalia/effect/regeneration",
+    "#effectiveregalia:regalia/effect/saturation",
+    "#effectiveregalia:regalia/effect/jump_boost",
+    "#effectiveregalia:regalia/effect/slow_falling",
+
+    "#effectiveregalia:regalia/immune/blindness",
+    "#effectiveregalia:regalia/immune/fire",
+    "#effectiveregalia:regalia/immune/hunger",
+    "#effectiveregalia:regalia/immune/mining_fatigue",
+    "#effectiveregalia:regalia/immune/poison",
+    "#effectiveregalia:regalia/immune/weakness",
+    "#effectiveregalia:regalia/immune/wither"
+  ]
+}
