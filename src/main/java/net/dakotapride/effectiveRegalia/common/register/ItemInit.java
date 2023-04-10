@@ -2,27 +2,38 @@ package net.dakotapride.effectiveRegalia.common.register;
 
 import net.dakotapride.effectiveRegalia.common.item.base.BaseRegaliaTrinketItem;
 import net.dakotapride.effectiveRegalia.common.item.effect.*;
+import net.dakotapride.effectiveRegalia.common.item.effect.JumpBoostRegaliaTrinketItem.GoldenJumpBoostRegalia;
+import net.dakotapride.effectiveRegalia.common.item.effect.JumpBoostRegaliaTrinketItem.PlatedJumpBoostRegalia;
+import net.dakotapride.effectiveRegalia.common.item.effect.NightVisionRegaliaTrinketItem.GoldenNightVisionRegalia;
+import net.dakotapride.effectiveRegalia.common.item.effect.NightVisionRegaliaTrinketItem.PlatedNightVisionRegalia;
+import net.dakotapride.effectiveRegalia.common.item.effect.RegenerationRegaliaTrinketItem.GoldenRegenerationRegalia;
+import net.dakotapride.effectiveRegalia.common.item.effect.RegenerationRegaliaTrinketItem.PlatedRegenerationRegalia;
+import net.dakotapride.effectiveRegalia.common.item.effect.SaturationRegaliaTrinketItem.GoldenSaturationRegalia;
+import net.dakotapride.effectiveRegalia.common.item.effect.SaturationRegaliaTrinketItem.PlatedSaturationRegalia;
+import net.dakotapride.effectiveRegalia.common.item.effect.SlowFallingRegaliaTrinketItem.GoldenSlowFallingRegalia;
+import net.dakotapride.effectiveRegalia.common.item.effect.SlowFallingRegaliaTrinketItem.PlatedSlowFallingRegalia;
+import net.dakotapride.effectiveRegalia.common.item.effect.StrengthRegaliaTrinketItem.GoldenStrengthRegalia;
+import net.dakotapride.effectiveRegalia.common.item.effect.StrengthRegaliaTrinketItem.PlatedStrengthRegalia;
 import net.dakotapride.effectiveRegalia.common.item.immune.*;
+import net.dakotapride.effectiveRegalia.common.item.immune.BlindnessImmunityRegaliaTrinketItem.GoldenBlindnessImmunityRegalia;
+import net.dakotapride.effectiveRegalia.common.item.immune.BlindnessImmunityRegaliaTrinketItem.PlatedBlindnessImmunityRegalia;
+import net.dakotapride.effectiveRegalia.common.item.immune.FireImmunityRegaliaTrinketItem.GoldenFireImmunityRegalia;
+import net.dakotapride.effectiveRegalia.common.item.immune.FireImmunityRegaliaTrinketItem.PlatedFireImmunityRegalia;
+import net.dakotapride.effectiveRegalia.common.item.immune.HungerImmunityRegaliaTrinketItem.GoldenHungerImmunityRegalia;
+import net.dakotapride.effectiveRegalia.common.item.immune.HungerImmunityRegaliaTrinketItem.PlatedHungerImmunityRegalia;
+import net.dakotapride.effectiveRegalia.common.item.immune.MiningFatigueImmunityRegaliaTrinketItem.GoldenMiningFatigueImmunityRegalia;
+import net.dakotapride.effectiveRegalia.common.item.immune.MiningFatigueImmunityRegaliaTrinketItem.PlatedMiningFatigueImmunityRegalia;
+import net.dakotapride.effectiveRegalia.common.item.immune.PoisonImmunityRegaliaTrinketItem.GoldenPoisonImmunityRegalia;
+import net.dakotapride.effectiveRegalia.common.item.immune.PoisonImmunityRegaliaTrinketItem.PlatedPoisonImmunityRegalia;
+import net.dakotapride.effectiveRegalia.common.item.immune.WeaknessImmunityRegaliaTrinketItem.GoldenWeaknessImmunityRegalia;
+import net.dakotapride.effectiveRegalia.common.item.immune.WeaknessImmunityRegaliaTrinketItem.PlatedWeaknessImmunityRegalia;
+import net.dakotapride.effectiveRegalia.common.item.immune.WitherImmunityRegaliaTrinketItem.GoldenWitherImmunityRegalia;
+import net.dakotapride.effectiveRegalia.common.item.immune.WitherImmunityRegaliaTrinketItem.PlatedWitherImmunityRegalia;
 import net.dakotapride.effectiveRegalia.common.item.misc.HealthBoostRegaliaTrinketItem;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
-
-import net.dakotapride.effectiveRegalia.common.item.effect.StrengthRegaliaTrinketItem.*;
-import net.dakotapride.effectiveRegalia.common.item.effect.NightVisionRegaliaTrinketItem.*;
-import net.dakotapride.effectiveRegalia.common.item.effect.RegenerationRegaliaTrinketItem.*;
-import net.dakotapride.effectiveRegalia.common.item.effect.SaturationRegaliaTrinketItem.*;
-import net.dakotapride.effectiveRegalia.common.item.effect.JumpBoostRegaliaTrinketItem.*;
-import net.dakotapride.effectiveRegalia.common.item.effect.SlowFallingRegaliaTrinketItem.*;
-
-import net.dakotapride.effectiveRegalia.common.item.immune.HungerImmunityRegaliaTrinketItem.*;
-import net.dakotapride.effectiveRegalia.common.item.immune.PoisonImmunityRegaliaTrinketItem.*;
-import net.dakotapride.effectiveRegalia.common.item.immune.WeaknessImmunityRegaliaTrinketItem.*;
-import net.dakotapride.effectiveRegalia.common.item.immune.WitherImmunityRegaliaTrinketItem.*;
-import net.dakotapride.effectiveRegalia.common.item.immune.BlindnessImmunityRegaliaTrinketItem.*;
-import net.dakotapride.effectiveRegalia.common.item.immune.MiningFatigueImmunityRegaliaTrinketItem.*;
-import net.dakotapride.effectiveRegalia.common.item.immune.FireImmunityRegaliaTrinketItem.*;
 
 public class ItemInit implements Constants {
 

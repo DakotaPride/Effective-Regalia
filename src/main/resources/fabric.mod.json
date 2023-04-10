@@ -22,6 +22,9 @@
   "entrypoints": {
     "main": [
       "net.dakotapride.effectiveRegalia.common.EffectiveRegalia"
+    ],
+    "fabric-datagen": [
+      "net.dakotapride.effectiveRegalia.common.register.data.DataGenProvider"
     ]
   },
   "mixins": [

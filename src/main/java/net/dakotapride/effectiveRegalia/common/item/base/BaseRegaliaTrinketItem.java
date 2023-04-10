@@ -1,17 +1,8 @@
 package net.dakotapride.effectiveRegalia.common.item.base;
 
-import com.google.common.collect.Multimap;
-import dev.emi.trinkets.api.SlotReference;
 import dev.emi.trinkets.api.TrinketItem;
 import net.dakotapride.effectiveRegalia.common.register.Constants;
-import net.dakotapride.effectiveRegalia.common.register.ItemInit;
 import net.minecraft.client.item.TooltipContext;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.attribute.EntityAttribute;
-import net.minecraft.entity.attribute.EntityAttributeModifier;
-import net.minecraft.entity.attribute.EntityAttributes;
-import net.minecraft.entity.effect.StatusEffectInstance;
-import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.ItemStack;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
@@ -19,7 +10,6 @@ import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
-import java.util.UUID;
 
 public class BaseRegaliaTrinketItem extends TrinketItem implements Constants {
     public static String tooltipText;
