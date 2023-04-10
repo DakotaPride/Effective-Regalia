@@ -1,24 +1,24 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_charcoal": {
+    "has_phantom_membrane": {
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:charcoal"
+              "minecraft:phantom_membrane"
             ]
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "has_plated_regalia": {
+    "has_regalia": {
       "conditions": {
         "items": [
           {
             "items": [
-              "effectiveregalia:plated_regalia"
+              "effectiveregalia:regalia"
             ]
           }
         ]
@@ -39,22 +39,22 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:plated_regalia_blindness"
+        "recipe": "minecraft:regalia/golden/golden_regalia_slow_falling"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_plated_regalia",
+      "has_regalia",
       "has_string",
-      "has_charcoal",
+      "has_phantom_membrane",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:plated_regalia_blindness"
+      "minecraft:regalia/golden/golden_regalia_slow_falling"
     ]
   }
 }

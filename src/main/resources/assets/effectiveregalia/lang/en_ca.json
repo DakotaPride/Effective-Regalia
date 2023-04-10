@@ -32,6 +32,8 @@
   "item.effectiveregalia.regalia_fire": "Regalia",
   "item.effectiveregalia.regalia_mining_fatigue": "Regalia",
 
+  "item.effectiveregalia.regalia_health": "Regalia",
+
   "item.effectiveregalia.golden_regalia_blindness": "Golden Regalia",
   "item.effectiveregalia.golden_regalia_hunger": "Golden Regalia",
   "item.effectiveregalia.golden_regalia_poison": "Golden Regalia",
@@ -62,6 +64,6 @@
   "text.effectiveregalia.regalia.wither": "Capability: Wither Immunity",
   "text.effectiveregalia.regalia.mining_fatigue": "Capability: Mining Fatigue Immunity",
   "text.effectiveregalia.regalia.fire": "Capability: Fire Immunity",
-  "text.effectiveregalia.regalia.blindness": "Capability: Blindness Immunity",
+  "text.effectiveregalia.regalia.blindness": "Capability: Blindness Immunity"
 
 }

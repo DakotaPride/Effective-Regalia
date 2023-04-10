@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "effectiveregalia:regalia"
+    },
+    {
+      "item": "minecraft:string"
+    },
+    {
+      "item": "minecraft:apple"
+    }
+  ],
+  "result": {
+    "item": "effectiveregalia:regalia_saturation"
+  }
+}

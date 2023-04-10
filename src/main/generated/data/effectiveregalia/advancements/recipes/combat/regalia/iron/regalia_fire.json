@@ -13,12 +13,12 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "has_plated_regalia": {
+    "has_regalia": {
       "conditions": {
         "items": [
           {
             "items": [
-              "effectiveregalia:plated_regalia"
+              "effectiveregalia:regalia"
             ]
           }
         ]
@@ -39,14 +39,14 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:plated_regalia_fire"
+        "recipe": "minecraft:regalia/iron/regalia_fire"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_plated_regalia",
+      "has_regalia",
       "has_string",
       "has_magma_block",
       "has_the_recipe"
@@ -54,7 +54,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:plated_regalia_fire"
+      "minecraft:regalia/iron/regalia_fire"
     ]
   }
 }

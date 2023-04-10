@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "addition": {
+    "item": "minecraft:netherite_scrap"
+  },
+  "base": {
+    "item": "effectiveregalia:golden_regalia"
+  },
+  "result": {
+    "item": "effectiveregalia:plated_regalia"
+  }
+}

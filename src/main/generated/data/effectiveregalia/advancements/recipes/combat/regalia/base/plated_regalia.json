@@ -1,36 +1,24 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_charcoal": {
+    "has_golden_regalia": {
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:charcoal"
+              "effectiveregalia:golden_regalia"
             ]
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "has_regalia": {
+    "has_netherite_scrap": {
       "conditions": {
         "items": [
           {
             "items": [
-              "effectiveregalia:regalia"
-            ]
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "has_string": {
-      "conditions": {
-        "items": [
-          {
-            "items": [
-              "minecraft:string"
+              "minecraft:netherite_scrap"
             ]
           }
         ]
@@ -39,22 +27,21 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:regalia_blindness"
+        "recipe": "minecraft:regalia/base/plated_regalia"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_regalia",
-      "has_string",
-      "has_charcoal",
+      "has_netherite_scrap",
+      "has_golden_regalia",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:regalia_blindness"
+      "minecraft:regalia/base/plated_regalia"
     ]
   }
 }

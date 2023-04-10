@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_magma_block": {
+    "has_ghast_tear": {
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:magma_block"
+              "minecraft:ghast_tear"
             ]
           }
         ]
@@ -39,7 +39,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:golden_regalia_fire"
+        "recipe": "minecraft:regalia/iron/regalia_regeneration"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -48,13 +48,13 @@
     [
       "has_regalia",
       "has_string",
-      "has_magma_block",
+      "has_ghast_tear",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:golden_regalia_fire"
+      "minecraft:regalia/iron/regalia_regeneration"
     ]
   }
 }
