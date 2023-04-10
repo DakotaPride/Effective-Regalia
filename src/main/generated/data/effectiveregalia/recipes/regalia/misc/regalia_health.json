@@ -8,10 +8,13 @@
       "item": "minecraft:string"
     },
     {
-      "item": "minecraft:prismarine_shard"
+      "item": "minecraft:ghast_tear"
+    },
+    {
+      "item": "minecraft:poppy"
     }
   ],
   "result": {
-    "item": "effectiveregalia:plated_regalia_mining_fatigue"
+    "item": "effectiveregalia:regalia_health"
   }
 }

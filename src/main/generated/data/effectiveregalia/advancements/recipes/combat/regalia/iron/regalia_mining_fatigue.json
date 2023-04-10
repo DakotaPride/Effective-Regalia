@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_prismarine": {
+    "has_prismarine_shard": {
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:prismarine"
+              "minecraft:prismarine_shard"
             ]
           }
         ]
@@ -48,7 +48,7 @@
     [
       "has_regalia",
       "has_string",
-      "has_prismarine",
+      "has_prismarine_shard",
       "has_the_recipe"
     ]
   ],

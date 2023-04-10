@@ -515,6 +515,6 @@ public class RecipeDataGen extends FabricRecipeProvider {
                 .input(Items.POPPY)
                 .criterion(RecipeProvider.hasItem(Items.WITHER_ROSE),
                         RecipeProvider.conditionsFromItem(Items.WITHER_ROSE))
-                .offerTo(exporter, new Identifier("regalia/plated/" + RecipeProvider.getRecipeName(ItemInit.REGALIA_HEALTH)));
+                .offerTo(exporter, new Identifier("regalia/misc/" + RecipeProvider.getRecipeName(ItemInit.REGALIA_HEALTH)));
     }
 }
