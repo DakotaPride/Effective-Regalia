@@ -56,6 +56,7 @@
   "text.effectiveregalia.regalia.saturation": "Capability: Saturation",
   "text.effectiveregalia.regalia.strength": "Capability: Strength",
   "text.effectiveregalia.regalia.slow_falling": "Capability: Slow Falling",
+  "text.effectiveregalia.regalia.health": "Capability: Health",
   "text.effectiveregalia.regalia.none": "Capability: None",
 
   "text.effectiveregalia.regalia.hunger": "Capability: Hunger Immunity",
@@ -64,6 +65,22 @@
   "text.effectiveregalia.regalia.wither": "Capability: Wither Immunity",
   "text.effectiveregalia.regalia.mining_fatigue": "Capability: Mining Fatigue Immunity",
   "text.effectiveregalia.regalia.fire": "Capability: Fire Immunity",
-  "text.effectiveregalia.regalia.blindness": "Capability: Blindness Immunity"
+  "text.effectiveregalia.regalia.blindness": "Capability: Blindness Immunity",
+
+  "text.effectiveregalia.regalia.jump_boost.description": "Provides the user with Jump Boost",
+  "text.effectiveregalia.regalia.night_vision.description": "Provides the user with Night Vision",
+  "text.effectiveregalia.regalia.regeneration.description": "Provides the user with Regeneration",
+  "text.effectiveregalia.regalia.saturation.description": "Provides the user with Saturation",
+  "text.effectiveregalia.regalia.strength.description": "Provides the user with Strength",
+  "text.effectiveregalia.regalia.slow_falling.description": "Provides the user with Slow Falling",
+  "text.effectiveregalia.regalia.health.description": "Provides the user with Additional Health Points",
+
+  "text.effectiveregalia.regalia.hunger.description": "Provides the user with immunity to Hunger",
+  "text.effectiveregalia.regalia.poison.description": "Provides the user with immunity to Poison",
+  "text.effectiveregalia.regalia.weakness.description": "Provides the user with immunity to Weakness",
+  "text.effectiveregalia.regalia.wither.description": "Provides the user with immunity to Wither",
+  "text.effectiveregalia.regalia.mining_fatigue.description": "Provides the user with immunity to Mining Fatigue",
+  "text.effectiveregalia.regalia.fire.description": "Provides the user with immunity to Fire Damage",
+  "text.effectiveregalia.regalia.blindness.description": "Provides the user with immunity to Blindness"
 
 }

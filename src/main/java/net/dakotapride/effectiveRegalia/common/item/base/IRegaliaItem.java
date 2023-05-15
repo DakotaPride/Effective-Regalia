@@ -62,6 +62,10 @@ public interface IRegaliaItem extends Constants {
     default boolean isWitherImmune(ItemStack stack) {
         return stack.isIn(witherImmunityRegaliaTag);
     }
+    // Misc
+    default boolean isHealth(ItemStack stack) {
+        return stack.isIn(healthRegaliaTag);
+    }
 
     // TagKeys
     TagKey<Item> strengthRegaliaTag = TagKey.of(Registry.ITEM_KEY, new Identifier(modId, "regalia/effect/strength"));
@@ -78,5 +82,7 @@ public interface IRegaliaItem extends Constants {
     TagKey<Item> poisonImmunityRegaliaTag = TagKey.of(Registry.ITEM_KEY, new Identifier(modId, "regalia/immune/poison"));
     TagKey<Item> weaknessImmunityRegaliaTag = TagKey.of(Registry.ITEM_KEY, new Identifier(modId, "regalia/immune/weakness"));
     TagKey<Item> witherImmunityRegaliaTag = TagKey.of(Registry.ITEM_KEY, new Identifier(modId, "regalia/immune/wither"));
+
+    TagKey<Item> healthRegaliaTag = TagKey.of(Registry.ITEM_KEY, new Identifier(modId, "regalia/effect/health"));
 
 }
