@@ -56,5 +56,6 @@
     "recipes": [
       "minecraft:regalia/iron/regalia_wither"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

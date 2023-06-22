@@ -56,5 +56,6 @@
     "recipes": [
       "minecraft:regalia/iron/regalia_jump_boost"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

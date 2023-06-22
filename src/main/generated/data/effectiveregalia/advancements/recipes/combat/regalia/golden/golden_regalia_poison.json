@@ -56,5 +56,6 @@
     "recipes": [
       "minecraft:regalia/golden/golden_regalia_poison"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

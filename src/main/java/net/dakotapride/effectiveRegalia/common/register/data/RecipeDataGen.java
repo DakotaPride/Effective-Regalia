@@ -1,26 +1,23 @@
 package net.dakotapride.effectiveRegalia.common.register.data;
 
 import net.dakotapride.effectiveRegalia.common.register.ItemInit;
-import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
+import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
-import net.minecraft.data.server.RecipeProvider;
-import net.minecraft.data.server.recipe.RecipeJsonProvider;
-import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
-import net.minecraft.data.server.recipe.ShapelessRecipeJsonBuilder;
-import net.minecraft.data.server.recipe.SmithingRecipeJsonBuilder;
+import net.minecraft.data.server.recipe.*;
 import net.minecraft.item.Items;
 import net.minecraft.recipe.Ingredient;
+import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.util.Identifier;
 
 import java.util.function.Consumer;
 
 public class RecipeDataGen extends FabricRecipeProvider {
-    public RecipeDataGen(FabricDataGenerator dataGenerator) {
-        super(dataGenerator);
+    public RecipeDataGen(FabricDataOutput output) {
+        super(output);
     }
 
     @Override
-    protected void generateRecipes(Consumer<RecipeJsonProvider> exporter) {
+    public void generate(Consumer<RecipeJsonProvider> exporter) {
 
         // Regalia, Golden Regalia, Plated Regalia
         generateBaseRegaliaRecipes(exporter);
@@ -33,7 +30,7 @@ public class RecipeDataGen extends FabricRecipeProvider {
 
     private void generateBaseRegaliaRecipes(Consumer<RecipeJsonProvider> exporter) {
 
-        ShapedRecipeJsonBuilder.create(ItemInit.REGALIA)
+        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ItemInit.REGALIA)
                 .pattern(" ##")
                 .pattern("# #")
                 .pattern("## ")
@@ -42,7 +39,7 @@ public class RecipeDataGen extends FabricRecipeProvider {
                         RecipeProvider.conditionsFromItem(Items.IRON_INGOT))
                 .offerTo(exporter, new Identifier("regalia/base/" + RecipeProvider.getRecipeName(ItemInit.REGALIA)));
 
-        ShapedRecipeJsonBuilder.create(ItemInit.REGALIA_GOLDEN)
+        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ItemInit.REGALIA_GOLDEN)
                 .pattern(" ##")
                 .pattern("# #")
                 .pattern("## ")
@@ -51,8 +48,9 @@ public class RecipeDataGen extends FabricRecipeProvider {
                         RecipeProvider.conditionsFromItem(Items.GOLD_INGOT))
                 .offerTo(exporter, new Identifier("regalia/base/" + RecipeProvider.getRecipeName(ItemInit.REGALIA_GOLDEN)));
 
-        SmithingRecipeJsonBuilder.create(Ingredient.ofItems(ItemInit.REGALIA_GOLDEN),
-                Ingredient.ofItems(Items.NETHERITE_SCRAP), ItemInit.REGALIA_PLATED)
+        SmithingTransformRecipeJsonBuilder.create(Ingredient.ofItems(Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE),
+                        Ingredient.ofItems(ItemInit.REGALIA_GOLDEN), Ingredient.ofItems(Items.NETHERITE_SCRAP),
+                        RecipeCategory.COMBAT, ItemInit.REGALIA_PLATED)
                 .criterion(RecipeProvider.hasItem(Items.NETHERITE_SCRAP),
                         RecipeProvider.conditionsFromItem(Items.NETHERITE_SCRAP))
                 .criterion(RecipeProvider.hasItem(ItemInit.REGALIA_GOLDEN),
@@ -62,7 +60,7 @@ public class RecipeDataGen extends FabricRecipeProvider {
     }
 
     private void generateFunctionRegaliaRecipes(Consumer<RecipeJsonProvider> exporter) {
-        ShapelessRecipeJsonBuilder.create(ItemInit.REGALIA_BLINDNESS)
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, ItemInit.REGALIA_BLINDNESS)
                 .input(ItemInit.REGALIA)
                 .criterion(RecipeProvider.hasItem(ItemInit.REGALIA),
                         RecipeProvider.conditionsFromItem(ItemInit.REGALIA))
@@ -73,7 +71,7 @@ public class RecipeDataGen extends FabricRecipeProvider {
                 .criterion(RecipeProvider.hasItem(Items.CHARCOAL),
                         RecipeProvider.conditionsFromItem(Items.CHARCOAL))
                 .offerTo(exporter, new Identifier("regalia/iron/" + RecipeProvider.getRecipeName(ItemInit.REGALIA_BLINDNESS)));
-        ShapelessRecipeJsonBuilder.create(ItemInit.REGALIA_BLINDNESS_GOLDEN)
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, ItemInit.REGALIA_BLINDNESS_GOLDEN)
                 .input(ItemInit.REGALIA_GOLDEN)
                 .criterion(RecipeProvider.hasItem(ItemInit.REGALIA),
                         RecipeProvider.conditionsFromItem(ItemInit.REGALIA))
@@ -84,7 +82,7 @@ public class RecipeDataGen extends FabricRecipeProvider {
                 .criterion(RecipeProvider.hasItem(Items.CHARCOAL),
                         RecipeProvider.conditionsFromItem(Items.CHARCOAL))
                 .offerTo(exporter, new Identifier("regalia/golden/" + RecipeProvider.getRecipeName(ItemInit.REGALIA_BLINDNESS_GOLDEN)));
-        ShapelessRecipeJsonBuilder.create(ItemInit.REGALIA_BLINDNESS_PLATED)
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, ItemInit.REGALIA_BLINDNESS_PLATED)
                 .input(ItemInit.REGALIA_PLATED)
                 .criterion(RecipeProvider.hasItem(ItemInit.REGALIA_PLATED),
                         RecipeProvider.conditionsFromItem(ItemInit.REGALIA_PLATED))
@@ -96,7 +94,7 @@ public class RecipeDataGen extends FabricRecipeProvider {
                         RecipeProvider.conditionsFromItem(Items.CHARCOAL))
                 .offerTo(exporter, new Identifier("regalia/plated/" + RecipeProvider.getRecipeName(ItemInit.REGALIA_BLINDNESS_PLATED)));
 
-        ShapelessRecipeJsonBuilder.create(ItemInit.REGALIA_FIRE)
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, ItemInit.REGALIA_FIRE)
                 .input(ItemInit.REGALIA)
                 .criterion(RecipeProvider.hasItem(ItemInit.REGALIA),
                         RecipeProvider.conditionsFromItem(ItemInit.REGALIA))
@@ -107,7 +105,7 @@ public class RecipeDataGen extends FabricRecipeProvider {
                 .criterion(RecipeProvider.hasItem(Items.MAGMA_BLOCK),
                         RecipeProvider.conditionsFromItem(Items.MAGMA_BLOCK))
                 .offerTo(exporter, new Identifier("regalia/iron/" + RecipeProvider.getRecipeName(ItemInit.REGALIA_FIRE)));
-        ShapelessRecipeJsonBuilder.create(ItemInit.REGALIA_FIRE_GOLDEN)
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, ItemInit.REGALIA_FIRE_GOLDEN)
                 .input(ItemInit.REGALIA_GOLDEN)
                 .criterion(RecipeProvider.hasItem(ItemInit.REGALIA),
                         RecipeProvider.conditionsFromItem(ItemInit.REGALIA))
@@ -118,7 +116,7 @@ public class RecipeDataGen extends FabricRecipeProvider {
                 .criterion(RecipeProvider.hasItem(Items.MAGMA_BLOCK),
                         RecipeProvider.conditionsFromItem(Items.MAGMA_BLOCK))
                 .offerTo(exporter, new Identifier("regalia/golden/" + RecipeProvider.getRecipeName(ItemInit.REGALIA_FIRE_GOLDEN)));
-        ShapelessRecipeJsonBuilder.create(ItemInit.REGALIA_FIRE_PLATED)
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, ItemInit.REGALIA_FIRE_PLATED)
                 .input(ItemInit.REGALIA_PLATED)
                 .criterion(RecipeProvider.hasItem(ItemInit.REGALIA_PLATED),
                         RecipeProvider.conditionsFromItem(ItemInit.REGALIA_PLATED))
@@ -130,7 +128,7 @@ public class RecipeDataGen extends FabricRecipeProvider {
                         RecipeProvider.conditionsFromItem(Items.MAGMA_BLOCK))
                 .offerTo(exporter, new Identifier("regalia/plated/" + RecipeProvider.getRecipeName(ItemInit.REGALIA_FIRE_PLATED)));
 
-        ShapelessRecipeJsonBuilder.create(ItemInit.REGALIA_HUNGER)
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, ItemInit.REGALIA_HUNGER)
                 .input(ItemInit.REGALIA)
                 .criterion(RecipeProvider.hasItem(ItemInit.REGALIA),
                         RecipeProvider.conditionsFromItem(ItemInit.REGALIA))
@@ -141,7 +139,7 @@ public class RecipeDataGen extends FabricRecipeProvider {
                 .criterion(RecipeProvider.hasItem(Items.ROTTEN_FLESH),
                         RecipeProvider.conditionsFromItem(Items.ROTTEN_FLESH))
                 .offerTo(exporter, new Identifier("regalia/iron/" + RecipeProvider.getRecipeName(ItemInit.REGALIA_HUNGER)));
-        ShapelessRecipeJsonBuilder.create(ItemInit.REGALIA_HUNGER_GOLDEN)
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, ItemInit.REGALIA_HUNGER_GOLDEN)
                 .input(ItemInit.REGALIA_GOLDEN)
                 .criterion(RecipeProvider.hasItem(ItemInit.REGALIA),
                         RecipeProvider.conditionsFromItem(ItemInit.REGALIA))
@@ -152,7 +150,7 @@ public class RecipeDataGen extends FabricRecipeProvider {
                 .criterion(RecipeProvider.hasItem(Items.ROTTEN_FLESH),
                         RecipeProvider.conditionsFromItem(Items.ROTTEN_FLESH))
                 .offerTo(exporter, new Identifier("regalia/golden/" + RecipeProvider.getRecipeName(ItemInit.REGALIA_HUNGER_GOLDEN)));
-        ShapelessRecipeJsonBuilder.create(ItemInit.REGALIA_HUNGER_PLATED)
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, ItemInit.REGALIA_HUNGER_PLATED)
                 .input(ItemInit.REGALIA_PLATED)
                 .criterion(RecipeProvider.hasItem(ItemInit.REGALIA_PLATED),
                         RecipeProvider.conditionsFromItem(ItemInit.REGALIA_PLATED))
@@ -164,7 +162,7 @@ public class RecipeDataGen extends FabricRecipeProvider {
                         RecipeProvider.conditionsFromItem(Items.ROTTEN_FLESH))
                 .offerTo(exporter, new Identifier("regalia/plated/" + RecipeProvider.getRecipeName(ItemInit.REGALIA_HUNGER_PLATED)));
 
-        ShapelessRecipeJsonBuilder.create(ItemInit.REGALIA_JUMP_BOOST)
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, ItemInit.REGALIA_JUMP_BOOST)
                 .input(ItemInit.REGALIA)
                 .criterion(RecipeProvider.hasItem(ItemInit.REGALIA),
                         RecipeProvider.conditionsFromItem(ItemInit.REGALIA))
@@ -175,7 +173,7 @@ public class RecipeDataGen extends FabricRecipeProvider {
                 .criterion(RecipeProvider.hasItem(Items.RABBIT_FOOT),
                         RecipeProvider.conditionsFromItem(Items.RABBIT_FOOT))
                 .offerTo(exporter, new Identifier("regalia/iron/" + RecipeProvider.getRecipeName(ItemInit.REGALIA_JUMP_BOOST)));
-        ShapelessRecipeJsonBuilder.create(ItemInit.REGALIA_JUMP_BOOST_GOLDEN)
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, ItemInit.REGALIA_JUMP_BOOST_GOLDEN)
                 .input(ItemInit.REGALIA_GOLDEN)
                 .criterion(RecipeProvider.hasItem(ItemInit.REGALIA),
                         RecipeProvider.conditionsFromItem(ItemInit.REGALIA))
@@ -186,7 +184,7 @@ public class RecipeDataGen extends FabricRecipeProvider {
                 .criterion(RecipeProvider.hasItem(Items.RABBIT_FOOT),
                         RecipeProvider.conditionsFromItem(Items.RABBIT_FOOT))
                 .offerTo(exporter, new Identifier("regalia/golden/" + RecipeProvider.getRecipeName(ItemInit.REGALIA_JUMP_BOOST_GOLDEN)));
-        ShapelessRecipeJsonBuilder.create(ItemInit.REGALIA_JUMP_BOOST_PLATED)
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, ItemInit.REGALIA_JUMP_BOOST_PLATED)
                 .input(ItemInit.REGALIA_PLATED)
                 .criterion(RecipeProvider.hasItem(ItemInit.REGALIA_PLATED),
                         RecipeProvider.conditionsFromItem(ItemInit.REGALIA_PLATED))
@@ -198,7 +196,7 @@ public class RecipeDataGen extends FabricRecipeProvider {
                         RecipeProvider.conditionsFromItem(Items.RABBIT_FOOT))
                 .offerTo(exporter, new Identifier("regalia/plated/" + RecipeProvider.getRecipeName(ItemInit.REGALIA_JUMP_BOOST_PLATED)));
 
-        ShapelessRecipeJsonBuilder.create(ItemInit.REGALIA_MINING_FATIGUE)
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, ItemInit.REGALIA_MINING_FATIGUE)
                 .input(ItemInit.REGALIA)
                 .criterion(RecipeProvider.hasItem(ItemInit.REGALIA),
                         RecipeProvider.conditionsFromItem(ItemInit.REGALIA))
@@ -209,7 +207,7 @@ public class RecipeDataGen extends FabricRecipeProvider {
                 .criterion(RecipeProvider.hasItem(Items.PRISMARINE_SHARD),
                         RecipeProvider.conditionsFromItem(Items.PRISMARINE_SHARD))
                 .offerTo(exporter, new Identifier("regalia/iron/" + RecipeProvider.getRecipeName(ItemInit.REGALIA_MINING_FATIGUE)));
-        ShapelessRecipeJsonBuilder.create(ItemInit.REGALIA_MINING_FATIGUE_GOLDEN)
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, ItemInit.REGALIA_MINING_FATIGUE_GOLDEN)
                 .input(ItemInit.REGALIA_GOLDEN)
                 .criterion(RecipeProvider.hasItem(ItemInit.REGALIA),
                         RecipeProvider.conditionsFromItem(ItemInit.REGALIA))
@@ -220,7 +218,7 @@ public class RecipeDataGen extends FabricRecipeProvider {
                 .criterion(RecipeProvider.hasItem(Items.PRISMARINE_SHARD),
                         RecipeProvider.conditionsFromItem(Items.PRISMARINE_SHARD))
                 .offerTo(exporter, new Identifier("regalia/golden/" + RecipeProvider.getRecipeName(ItemInit.REGALIA_MINING_FATIGUE_GOLDEN)));
-        ShapelessRecipeJsonBuilder.create(ItemInit.REGALIA_MINING_FATIGUE_PLATED)
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, ItemInit.REGALIA_MINING_FATIGUE_PLATED)
                 .input(ItemInit.REGALIA_PLATED)
                 .criterion(RecipeProvider.hasItem(ItemInit.REGALIA_PLATED),
                         RecipeProvider.conditionsFromItem(ItemInit.REGALIA_PLATED))
@@ -232,7 +230,7 @@ public class RecipeDataGen extends FabricRecipeProvider {
                         RecipeProvider.conditionsFromItem(Items.PRISMARINE_SHARD))
                 .offerTo(exporter, new Identifier("regalia/plated/" + RecipeProvider.getRecipeName(ItemInit.REGALIA_MINING_FATIGUE_PLATED)));
 
-        ShapelessRecipeJsonBuilder.create(ItemInit.REGALIA_NIGHT_VISION)
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, ItemInit.REGALIA_NIGHT_VISION)
                 .input(ItemInit.REGALIA)
                 .criterion(RecipeProvider.hasItem(ItemInit.REGALIA),
                         RecipeProvider.conditionsFromItem(ItemInit.REGALIA))
@@ -243,7 +241,7 @@ public class RecipeDataGen extends FabricRecipeProvider {
                 .criterion(RecipeProvider.hasItem(Items.GOLDEN_CARROT),
                         RecipeProvider.conditionsFromItem(Items.GOLDEN_CARROT))
                 .offerTo(exporter, new Identifier("regalia/iron/" + RecipeProvider.getRecipeName(ItemInit.REGALIA_NIGHT_VISION)));
-        ShapelessRecipeJsonBuilder.create(ItemInit.REGALIA_NIGHT_VISION_GOLDEN)
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, ItemInit.REGALIA_NIGHT_VISION_GOLDEN)
                 .input(ItemInit.REGALIA_GOLDEN)
                 .criterion(RecipeProvider.hasItem(ItemInit.REGALIA),
                         RecipeProvider.conditionsFromItem(ItemInit.REGALIA))
@@ -254,7 +252,7 @@ public class RecipeDataGen extends FabricRecipeProvider {
                 .criterion(RecipeProvider.hasItem(Items.GOLDEN_CARROT),
                         RecipeProvider.conditionsFromItem(Items.GOLDEN_CARROT))
                 .offerTo(exporter, new Identifier("regalia/golden/" + RecipeProvider.getRecipeName(ItemInit.REGALIA_NIGHT_VISION_GOLDEN)));
-        ShapelessRecipeJsonBuilder.create(ItemInit.REGALIA_NIGHT_VISION_PLATED)
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, ItemInit.REGALIA_NIGHT_VISION_PLATED)
                 .input(ItemInit.REGALIA_PLATED)
                 .criterion(RecipeProvider.hasItem(ItemInit.REGALIA_PLATED),
                         RecipeProvider.conditionsFromItem(ItemInit.REGALIA_PLATED))
@@ -266,7 +264,7 @@ public class RecipeDataGen extends FabricRecipeProvider {
                         RecipeProvider.conditionsFromItem(Items.GOLDEN_CARROT))
                 .offerTo(exporter, new Identifier("regalia/plated/" + RecipeProvider.getRecipeName(ItemInit.REGALIA_NIGHT_VISION_PLATED)));
 
-        ShapelessRecipeJsonBuilder.create(ItemInit.REGALIA_POISON)
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, ItemInit.REGALIA_POISON)
                 .input(ItemInit.REGALIA)
                 .criterion(RecipeProvider.hasItem(ItemInit.REGALIA),
                         RecipeProvider.conditionsFromItem(ItemInit.REGALIA))
@@ -277,7 +275,7 @@ public class RecipeDataGen extends FabricRecipeProvider {
                 .criterion(RecipeProvider.hasItem(Items.SPIDER_EYE),
                         RecipeProvider.conditionsFromItem(Items.SPIDER_EYE))
                 .offerTo(exporter, new Identifier("regalia/iron/" + RecipeProvider.getRecipeName(ItemInit.REGALIA_POISON)));
-        ShapelessRecipeJsonBuilder.create(ItemInit.REGALIA_POISON_GOLDEN)
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, ItemInit.REGALIA_POISON_GOLDEN)
                 .input(ItemInit.REGALIA_GOLDEN)
                 .criterion(RecipeProvider.hasItem(ItemInit.REGALIA),
                         RecipeProvider.conditionsFromItem(ItemInit.REGALIA))
@@ -288,7 +286,7 @@ public class RecipeDataGen extends FabricRecipeProvider {
                 .criterion(RecipeProvider.hasItem(Items.SPIDER_EYE),
                         RecipeProvider.conditionsFromItem(Items.SPIDER_EYE))
                 .offerTo(exporter, new Identifier("regalia/golden/" + RecipeProvider.getRecipeName(ItemInit.REGALIA_POISON_GOLDEN)));
-        ShapelessRecipeJsonBuilder.create(ItemInit.REGALIA_POISON_PLATED)
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, ItemInit.REGALIA_POISON_PLATED)
                 .input(ItemInit.REGALIA_PLATED)
                 .criterion(RecipeProvider.hasItem(ItemInit.REGALIA_PLATED),
                         RecipeProvider.conditionsFromItem(ItemInit.REGALIA_PLATED))
@@ -300,7 +298,7 @@ public class RecipeDataGen extends FabricRecipeProvider {
                         RecipeProvider.conditionsFromItem(Items.SPIDER_EYE))
                 .offerTo(exporter, new Identifier("regalia/plated/" + RecipeProvider.getRecipeName(ItemInit.REGALIA_POISON_PLATED)));
 
-        ShapelessRecipeJsonBuilder.create(ItemInit.REGALIA_REGENERATION)
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, ItemInit.REGALIA_REGENERATION)
                 .input(ItemInit.REGALIA)
                 .criterion(RecipeProvider.hasItem(ItemInit.REGALIA),
                         RecipeProvider.conditionsFromItem(ItemInit.REGALIA))
@@ -311,7 +309,7 @@ public class RecipeDataGen extends FabricRecipeProvider {
                 .criterion(RecipeProvider.hasItem(Items.GHAST_TEAR),
                         RecipeProvider.conditionsFromItem(Items.GHAST_TEAR))
                 .offerTo(exporter, new Identifier("regalia/iron/" + RecipeProvider.getRecipeName(ItemInit.REGALIA_REGENERATION)));
-        ShapelessRecipeJsonBuilder.create(ItemInit.REGALIA_REGENERATION_GOLDEN)
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, ItemInit.REGALIA_REGENERATION_GOLDEN)
                 .input(ItemInit.REGALIA_GOLDEN)
                 .criterion(RecipeProvider.hasItem(ItemInit.REGALIA),
                         RecipeProvider.conditionsFromItem(ItemInit.REGALIA))
@@ -322,7 +320,7 @@ public class RecipeDataGen extends FabricRecipeProvider {
                 .criterion(RecipeProvider.hasItem(Items.GHAST_TEAR),
                         RecipeProvider.conditionsFromItem(Items.GHAST_TEAR))
                 .offerTo(exporter, new Identifier("regalia/golden/" + RecipeProvider.getRecipeName(ItemInit.REGALIA_REGENERATION_GOLDEN)));
-        ShapelessRecipeJsonBuilder.create(ItemInit.REGALIA_REGENERATION_PLATED)
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, ItemInit.REGALIA_REGENERATION_PLATED)
                 .input(ItemInit.REGALIA_PLATED)
                 .criterion(RecipeProvider.hasItem(ItemInit.REGALIA_PLATED),
                         RecipeProvider.conditionsFromItem(ItemInit.REGALIA_PLATED))
@@ -334,7 +332,7 @@ public class RecipeDataGen extends FabricRecipeProvider {
                         RecipeProvider.conditionsFromItem(Items.GHAST_TEAR))
                 .offerTo(exporter, new Identifier("regalia/plated/" + RecipeProvider.getRecipeName(ItemInit.REGALIA_REGENERATION_PLATED)));
 
-        ShapelessRecipeJsonBuilder.create(ItemInit.REGALIA_SATURATION)
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, ItemInit.REGALIA_SATURATION)
                 .input(ItemInit.REGALIA)
                 .criterion(RecipeProvider.hasItem(ItemInit.REGALIA),
                         RecipeProvider.conditionsFromItem(ItemInit.REGALIA))
@@ -345,7 +343,7 @@ public class RecipeDataGen extends FabricRecipeProvider {
                 .criterion(RecipeProvider.hasItem(Items.APPLE),
                         RecipeProvider.conditionsFromItem(Items.APPLE))
                 .offerTo(exporter, new Identifier("regalia/iron/" + RecipeProvider.getRecipeName(ItemInit.REGALIA_SATURATION)));
-        ShapelessRecipeJsonBuilder.create(ItemInit.REGALIA_SATURATION_GOLDEN)
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, ItemInit.REGALIA_SATURATION_GOLDEN)
                 .input(ItemInit.REGALIA_GOLDEN)
                 .criterion(RecipeProvider.hasItem(ItemInit.REGALIA),
                         RecipeProvider.conditionsFromItem(ItemInit.REGALIA))
@@ -356,7 +354,7 @@ public class RecipeDataGen extends FabricRecipeProvider {
                 .criterion(RecipeProvider.hasItem(Items.APPLE),
                         RecipeProvider.conditionsFromItem(Items.APPLE))
                 .offerTo(exporter, new Identifier("regalia/golden/" + RecipeProvider.getRecipeName(ItemInit.REGALIA_SATURATION_GOLDEN)));
-        ShapelessRecipeJsonBuilder.create(ItemInit.REGALIA_SATURATION_PLATED)
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, ItemInit.REGALIA_SATURATION_PLATED)
                 .input(ItemInit.REGALIA_PLATED)
                 .criterion(RecipeProvider.hasItem(ItemInit.REGALIA_PLATED),
                         RecipeProvider.conditionsFromItem(ItemInit.REGALIA_PLATED))
@@ -368,7 +366,7 @@ public class RecipeDataGen extends FabricRecipeProvider {
                         RecipeProvider.conditionsFromItem(Items.APPLE))
                 .offerTo(exporter, new Identifier("regalia/plated/" + RecipeProvider.getRecipeName(ItemInit.REGALIA_SATURATION_PLATED)));
 
-        ShapelessRecipeJsonBuilder.create(ItemInit.REGALIA_SLOW_FALLING)
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, ItemInit.REGALIA_SLOW_FALLING)
                 .input(ItemInit.REGALIA)
                 .criterion(RecipeProvider.hasItem(ItemInit.REGALIA),
                         RecipeProvider.conditionsFromItem(ItemInit.REGALIA))
@@ -379,7 +377,7 @@ public class RecipeDataGen extends FabricRecipeProvider {
                 .criterion(RecipeProvider.hasItem(Items.PHANTOM_MEMBRANE),
                         RecipeProvider.conditionsFromItem(Items.PHANTOM_MEMBRANE))
                 .offerTo(exporter, new Identifier("regalia/iron/" + RecipeProvider.getRecipeName(ItemInit.REGALIA_SLOW_FALLING)));
-        ShapelessRecipeJsonBuilder.create(ItemInit.REGALIA_SLOW_FALLING_GOLDEN)
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, ItemInit.REGALIA_SLOW_FALLING_GOLDEN)
                 .input(ItemInit.REGALIA_GOLDEN)
                 .criterion(RecipeProvider.hasItem(ItemInit.REGALIA),
                         RecipeProvider.conditionsFromItem(ItemInit.REGALIA))
@@ -390,7 +388,7 @@ public class RecipeDataGen extends FabricRecipeProvider {
                 .criterion(RecipeProvider.hasItem(Items.PHANTOM_MEMBRANE),
                         RecipeProvider.conditionsFromItem(Items.PHANTOM_MEMBRANE))
                 .offerTo(exporter, new Identifier("regalia/golden/" + RecipeProvider.getRecipeName(ItemInit.REGALIA_SLOW_FALLING_GOLDEN)));
-        ShapelessRecipeJsonBuilder.create(ItemInit.REGALIA_SLOW_FALLING_PLATED)
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, ItemInit.REGALIA_SLOW_FALLING_PLATED)
                 .input(ItemInit.REGALIA_PLATED)
                 .criterion(RecipeProvider.hasItem(ItemInit.REGALIA_PLATED),
                         RecipeProvider.conditionsFromItem(ItemInit.REGALIA_PLATED))
@@ -402,7 +400,7 @@ public class RecipeDataGen extends FabricRecipeProvider {
                         RecipeProvider.conditionsFromItem(Items.PHANTOM_MEMBRANE))
                 .offerTo(exporter, new Identifier("regalia/plated/" + RecipeProvider.getRecipeName(ItemInit.REGALIA_SLOW_FALLING_PLATED)));
 
-        ShapelessRecipeJsonBuilder.create(ItemInit.REGALIA_STRENGTH)
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, ItemInit.REGALIA_STRENGTH)
                 .input(ItemInit.REGALIA)
                 .criterion(RecipeProvider.hasItem(ItemInit.REGALIA),
                         RecipeProvider.conditionsFromItem(ItemInit.REGALIA))
@@ -413,7 +411,7 @@ public class RecipeDataGen extends FabricRecipeProvider {
                 .criterion(RecipeProvider.hasItem(Items.BLAZE_POWDER),
                         RecipeProvider.conditionsFromItem(Items.BLAZE_POWDER))
                 .offerTo(exporter, new Identifier("regalia/iron/" + RecipeProvider.getRecipeName(ItemInit.REGALIA_STRENGTH)));
-        ShapelessRecipeJsonBuilder.create(ItemInit.REGALIA_STRENGTH_GOLDEN)
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, ItemInit.REGALIA_STRENGTH_GOLDEN)
                 .input(ItemInit.REGALIA_GOLDEN)
                 .criterion(RecipeProvider.hasItem(ItemInit.REGALIA),
                         RecipeProvider.conditionsFromItem(ItemInit.REGALIA))
@@ -424,7 +422,7 @@ public class RecipeDataGen extends FabricRecipeProvider {
                 .criterion(RecipeProvider.hasItem(Items.BLAZE_POWDER),
                         RecipeProvider.conditionsFromItem(Items.BLAZE_POWDER))
                 .offerTo(exporter, new Identifier("regalia/golden/" + RecipeProvider.getRecipeName(ItemInit.REGALIA_STRENGTH_GOLDEN)));
-        ShapelessRecipeJsonBuilder.create(ItemInit.REGALIA_STRENGTH_PLATED)
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, ItemInit.REGALIA_STRENGTH_PLATED)
                 .input(ItemInit.REGALIA_PLATED)
                 .criterion(RecipeProvider.hasItem(ItemInit.REGALIA_PLATED),
                         RecipeProvider.conditionsFromItem(ItemInit.REGALIA_PLATED))
@@ -436,7 +434,7 @@ public class RecipeDataGen extends FabricRecipeProvider {
                         RecipeProvider.conditionsFromItem(Items.BLAZE_POWDER))
                 .offerTo(exporter, new Identifier("regalia/plated/" + RecipeProvider.getRecipeName(ItemInit.REGALIA_STRENGTH_PLATED)));
 
-        ShapelessRecipeJsonBuilder.create(ItemInit.REGALIA_WEAKNESS)
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, ItemInit.REGALIA_WEAKNESS)
                 .input(ItemInit.REGALIA)
                 .criterion(RecipeProvider.hasItem(ItemInit.REGALIA),
                         RecipeProvider.conditionsFromItem(ItemInit.REGALIA))
@@ -447,7 +445,7 @@ public class RecipeDataGen extends FabricRecipeProvider {
                 .criterion(RecipeProvider.hasItem(Items.BROWN_MUSHROOM),
                         RecipeProvider.conditionsFromItem(Items.BROWN_MUSHROOM))
                 .offerTo(exporter, new Identifier("regalia/iron/" + RecipeProvider.getRecipeName(ItemInit.REGALIA_WEAKNESS)));
-        ShapelessRecipeJsonBuilder.create(ItemInit.REGALIA_WEAKNESS_GOLDEN)
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, ItemInit.REGALIA_WEAKNESS_GOLDEN)
                 .input(ItemInit.REGALIA_GOLDEN)
                 .criterion(RecipeProvider.hasItem(ItemInit.REGALIA),
                         RecipeProvider.conditionsFromItem(ItemInit.REGALIA))
@@ -458,7 +456,7 @@ public class RecipeDataGen extends FabricRecipeProvider {
                 .criterion(RecipeProvider.hasItem(Items.BROWN_MUSHROOM),
                         RecipeProvider.conditionsFromItem(Items.BROWN_MUSHROOM))
                 .offerTo(exporter, new Identifier("regalia/golden/" + RecipeProvider.getRecipeName(ItemInit.REGALIA_WEAKNESS_GOLDEN)));
-        ShapelessRecipeJsonBuilder.create(ItemInit.REGALIA_WEAKNESS_PLATED)
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, ItemInit.REGALIA_WEAKNESS_PLATED)
                 .input(ItemInit.REGALIA_PLATED)
                 .criterion(RecipeProvider.hasItem(ItemInit.REGALIA_PLATED),
                         RecipeProvider.conditionsFromItem(ItemInit.REGALIA_PLATED))
@@ -470,7 +468,7 @@ public class RecipeDataGen extends FabricRecipeProvider {
                         RecipeProvider.conditionsFromItem(Items.BROWN_MUSHROOM))
                 .offerTo(exporter, new Identifier("regalia/plated/" + RecipeProvider.getRecipeName(ItemInit.REGALIA_WEAKNESS_PLATED)));
 
-        ShapelessRecipeJsonBuilder.create(ItemInit.REGALIA_WITHER)
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, ItemInit.REGALIA_WITHER)
                 .input(ItemInit.REGALIA)
                 .criterion(RecipeProvider.hasItem(ItemInit.REGALIA),
                         RecipeProvider.conditionsFromItem(ItemInit.REGALIA))
@@ -481,7 +479,7 @@ public class RecipeDataGen extends FabricRecipeProvider {
                 .criterion(RecipeProvider.hasItem(Items.WITHER_ROSE),
                         RecipeProvider.conditionsFromItem(Items.WITHER_ROSE))
                 .offerTo(exporter, new Identifier("regalia/iron/" + RecipeProvider.getRecipeName(ItemInit.REGALIA_WITHER)));
-        ShapelessRecipeJsonBuilder.create(ItemInit.REGALIA_WITHER_GOLDEN)
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, ItemInit.REGALIA_WITHER_GOLDEN)
                 .input(ItemInit.REGALIA_GOLDEN)
                 .criterion(RecipeProvider.hasItem(ItemInit.REGALIA),
                         RecipeProvider.conditionsFromItem(ItemInit.REGALIA))
@@ -492,7 +490,7 @@ public class RecipeDataGen extends FabricRecipeProvider {
                 .criterion(RecipeProvider.hasItem(Items.WITHER_ROSE),
                         RecipeProvider.conditionsFromItem(Items.WITHER_ROSE))
                 .offerTo(exporter, new Identifier("regalia/golden/" + RecipeProvider.getRecipeName(ItemInit.REGALIA_WITHER_GOLDEN)));
-        ShapelessRecipeJsonBuilder.create(ItemInit.REGALIA_WITHER_PLATED)
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, ItemInit.REGALIA_WITHER_PLATED)
                 .input(ItemInit.REGALIA_PLATED)
                 .criterion(RecipeProvider.hasItem(ItemInit.REGALIA_PLATED),
                         RecipeProvider.conditionsFromItem(ItemInit.REGALIA_PLATED))
@@ -504,7 +502,7 @@ public class RecipeDataGen extends FabricRecipeProvider {
                         RecipeProvider.conditionsFromItem(Items.WITHER_ROSE))
                 .offerTo(exporter, new Identifier("regalia/plated/" + RecipeProvider.getRecipeName(ItemInit.REGALIA_WITHER_PLATED)));
 
-        ShapelessRecipeJsonBuilder.create(ItemInit.REGALIA_HEALTH)
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, ItemInit.REGALIA_HEALTH)
                 .input(ItemInit.REGALIA)
                 .criterion(RecipeProvider.hasItem(ItemInit.REGALIA),
                         RecipeProvider.conditionsFromItem(ItemInit.REGALIA))

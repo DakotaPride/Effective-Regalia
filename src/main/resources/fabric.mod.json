@@ -32,10 +32,10 @@
   ],
 
   "depends": {
-    "fabricloader": "*",
+    "fabricloader": ">=0.14.21",
     "fabric-api": "*",
-    "minecraft": "~1.19",
+    "minecraft": ">=1.19.3",
     "java": ">=17",
-    "trinkets": ">=3.4.1"
+    "trinkets": ">=3.7.0"
   }
 }

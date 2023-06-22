@@ -3,9 +3,9 @@ package net.dakotapride.effectiveRegalia.common.item.base;
 import net.dakotapride.effectiveRegalia.common.register.Constants;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.tag.TagKey;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.tag.TagKey;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
 
 public interface IRegaliaItem extends Constants {
 
@@ -68,21 +68,21 @@ public interface IRegaliaItem extends Constants {
     }
 
     // TagKeys
-    TagKey<Item> strengthRegaliaTag = TagKey.of(Registry.ITEM_KEY, new Identifier(modId, "regalia/effect/strength"));
-    TagKey<Item> nightVisionRegaliaTag = TagKey.of(Registry.ITEM_KEY, new Identifier(modId, "regalia/effect/night_vision"));
-    TagKey<Item> regenerationRegaliaTag = TagKey.of(Registry.ITEM_KEY, new Identifier(modId, "regalia/effect/regeneration"));
-    TagKey<Item> saturationRegaliaTag = TagKey.of(Registry.ITEM_KEY, new Identifier(modId, "regalia/effect/saturation"));
-    TagKey<Item> jumpBoostRegaliaTag = TagKey.of(Registry.ITEM_KEY, new Identifier(modId, "regalia/effect/jump_boost"));
-    TagKey<Item> slowFallingRegaliaTag = TagKey.of(Registry.ITEM_KEY, new Identifier(modId, "regalia/effect/slow_falling"));
+    TagKey<Item> strengthRegaliaTag = TagKey.of(Registries.ITEM.getKey(), new Identifier(modId, "regalia/effect/strength"));
+    TagKey<Item> nightVisionRegaliaTag = TagKey.of(Registries.ITEM.getKey(), new Identifier(modId, "regalia/effect/night_vision"));
+    TagKey<Item> regenerationRegaliaTag = TagKey.of(Registries.ITEM.getKey(), new Identifier(modId, "regalia/effect/regeneration"));
+    TagKey<Item> saturationRegaliaTag = TagKey.of(Registries.ITEM.getKey(), new Identifier(modId, "regalia/effect/saturation"));
+    TagKey<Item> jumpBoostRegaliaTag = TagKey.of(Registries.ITEM.getKey(), new Identifier(modId, "regalia/effect/jump_boost"));
+    TagKey<Item> slowFallingRegaliaTag = TagKey.of(Registries.ITEM.getKey(), new Identifier(modId, "regalia/effect/slow_falling"));
 
-    TagKey<Item> blindnessImmunityRegaliaTag = TagKey.of(Registry.ITEM_KEY, new Identifier(modId, "regalia/immune/blindness"));
-    TagKey<Item> fireImmunityRegaliaTag = TagKey.of(Registry.ITEM_KEY, new Identifier(modId, "regalia/immune/fire"));
-    TagKey<Item> hungerImmunityRegaliaTag = TagKey.of(Registry.ITEM_KEY, new Identifier(modId, "regalia/immune/hunger"));
-    TagKey<Item> miningFatigueImmunityRegaliaTag = TagKey.of(Registry.ITEM_KEY, new Identifier(modId, "regalia/immune/mining_fatigue"));
-    TagKey<Item> poisonImmunityRegaliaTag = TagKey.of(Registry.ITEM_KEY, new Identifier(modId, "regalia/immune/poison"));
-    TagKey<Item> weaknessImmunityRegaliaTag = TagKey.of(Registry.ITEM_KEY, new Identifier(modId, "regalia/immune/weakness"));
-    TagKey<Item> witherImmunityRegaliaTag = TagKey.of(Registry.ITEM_KEY, new Identifier(modId, "regalia/immune/wither"));
+    TagKey<Item> blindnessImmunityRegaliaTag = TagKey.of(Registries.ITEM.getKey(), new Identifier(modId, "regalia/immune/blindness"));
+    TagKey<Item> fireImmunityRegaliaTag = TagKey.of(Registries.ITEM.getKey(), new Identifier(modId, "regalia/immune/fire"));
+    TagKey<Item> hungerImmunityRegaliaTag = TagKey.of(Registries.ITEM.getKey(), new Identifier(modId, "regalia/immune/hunger"));
+    TagKey<Item> miningFatigueImmunityRegaliaTag = TagKey.of(Registries.ITEM.getKey(), new Identifier(modId, "regalia/immune/mining_fatigue"));
+    TagKey<Item> poisonImmunityRegaliaTag = TagKey.of(Registries.ITEM.getKey(), new Identifier(modId, "regalia/immune/poison"));
+    TagKey<Item> weaknessImmunityRegaliaTag = TagKey.of(Registries.ITEM.getKey(), new Identifier(modId, "regalia/immune/weakness"));
+    TagKey<Item> witherImmunityRegaliaTag = TagKey.of(Registries.ITEM.getKey(), new Identifier(modId, "regalia/immune/wither"));
 
-    TagKey<Item> healthRegaliaTag = TagKey.of(Registry.ITEM_KEY, new Identifier(modId, "regalia/effect/health"));
+    TagKey<Item> healthRegaliaTag = TagKey.of(Registries.ITEM.getKey(), new Identifier(modId, "regalia/effect/health"));
 
 }

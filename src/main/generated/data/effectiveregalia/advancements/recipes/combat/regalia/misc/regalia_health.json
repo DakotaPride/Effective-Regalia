@@ -56,5 +56,6 @@
     "recipes": [
       "minecraft:regalia/misc/regalia_health"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

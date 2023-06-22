@@ -56,5 +56,6 @@
     "recipes": [
       "minecraft:regalia/iron/regalia_night_vision"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

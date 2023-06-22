@@ -56,5 +56,6 @@
     "recipes": [
       "minecraft:regalia/golden/golden_regalia_slow_falling"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

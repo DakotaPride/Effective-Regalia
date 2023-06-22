@@ -56,5 +56,6 @@
     "recipes": [
       "minecraft:regalia/plated/plated_regalia_mining_fatigue"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

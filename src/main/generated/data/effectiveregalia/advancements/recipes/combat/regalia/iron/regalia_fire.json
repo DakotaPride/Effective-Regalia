@@ -56,5 +56,6 @@
     "recipes": [
       "minecraft:regalia/iron/regalia_fire"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }
