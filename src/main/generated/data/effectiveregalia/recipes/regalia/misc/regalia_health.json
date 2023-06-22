@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "effectiveregalia:plated_regalia"
+      "item": "effectiveregalia:regalia"
     },
     {
       "item": "minecraft:string"

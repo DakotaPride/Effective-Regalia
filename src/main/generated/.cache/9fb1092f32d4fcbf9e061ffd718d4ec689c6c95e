@@ -1,4 +1,4 @@
-// 1.19.2	2023-04-10T11:12:39.0234127	Recipes
+// 1.19.2	2023-06-22T09:20:01.7761076	Recipes
 815d7e78c8bc1b8f87e49ea2dff72cdf47497fc0 data\effectiveregalia\advancements\recipes\combat\regalia\iron\regalia_jump_boost.json
 82025d7da9a08bb4cc24aee873fef210bfd6e1e8 data\effectiveregalia\recipes\regalia\iron\regalia_fire.json
 6520c99be9e41a5df76703900a0935c9b8e57122 data\effectiveregalia\recipes\regalia\plated\plated_regalia_fire.json
@@ -68,7 +68,7 @@ a8311aae3ca2dc91ac0f4b870eabc1d670512b02 data\effectiveregalia\recipes\regalia\p
 859fbe1851a74b84b024405d0056dc8dc1f9232b data\effectiveregalia\advancements\recipes\combat\regalia\golden\golden_regalia_wither.json
 381b622c560ccefa6afc6d022543c2068d0ebedd data\effectiveregalia\recipes\regalia\iron\regalia_jump_boost.json
 70d12c77118b69afb411cce55d7517b32c5f6b79 data\effectiveregalia\recipes\regalia\iron\regalia_regeneration.json
-c62d9830a9f854cc87b511395494b9e87eef10f0 data\effectiveregalia\advancements\recipes\combat\regalia\misc\regalia_health.json
+8921b4298873edd9132204b05a3a88ff85fa46e5 data\effectiveregalia\advancements\recipes\combat\regalia\misc\regalia_health.json
 2d4e8d8f2552ea6aeabb1bca77f7905fcc9fb235 data\effectiveregalia\advancements\recipes\combat\regalia\base\golden_regalia.json
 21f1503ae233654f429bc7abc2cbf9953cde6a79 data\effectiveregalia\recipes\regalia\golden\golden_regalia_hunger.json
 aaf3e9eee06f0d4f51ba6e77e33d221b8f082868 data\effectiveregalia\recipes\regalia\iron\regalia_poison.json
@@ -83,5 +83,5 @@ f10eda98baad7f56f88651e67b1de4c6ffe37a9e data\effectiveregalia\recipes\regalia\p
 58c2edac5ce27534dfd6788e2a52ef95a79d715e data\effectiveregalia\advancements\recipes\combat\regalia\plated\plated_regalia_jump_boost.json
 4a149c556d94a49d9fbdd40c5c9dfd09fd4e3e05 data\effectiveregalia\advancements\recipes\combat\regalia\golden\golden_regalia_saturation.json
 c740924d7a143cf349c6ea8d37e22aabf971d7c5 data\effectiveregalia\advancements\recipes\combat\regalia\golden\golden_regalia_blindness.json
-8074749039dab96b34ba3ae7b5c5a684363335b2 data\effectiveregalia\recipes\regalia\misc\regalia_health.json
+8dfe06c3931bb41abda3c649c560888b1fd065fb data\effectiveregalia\recipes\regalia\misc\regalia_health.json
 230c1c74c475ab1b1e3ec21ee4a330b6340de4c2 data\effectiveregalia\advancements\recipes\combat\regalia\plated\plated_regalia_poison.json

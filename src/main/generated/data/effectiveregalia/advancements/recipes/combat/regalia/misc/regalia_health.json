@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_plated_regalia": {
+    "has_regalia": {
       "conditions": {
         "items": [
           {
             "items": [
-              "effectiveregalia:plated_regalia"
+              "effectiveregalia:regalia"
             ]
           }
         ]
@@ -46,7 +46,7 @@
   },
   "requirements": [
     [
-      "has_plated_regalia",
+      "has_regalia",
       "has_string",
       "has_wither_rose",
       "has_the_recipe"

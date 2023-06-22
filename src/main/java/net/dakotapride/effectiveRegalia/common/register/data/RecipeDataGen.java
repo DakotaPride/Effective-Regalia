@@ -505,9 +505,9 @@ public class RecipeDataGen extends FabricRecipeProvider {
                 .offerTo(exporter, new Identifier("regalia/plated/" + RecipeProvider.getRecipeName(ItemInit.REGALIA_WITHER_PLATED)));
 
         ShapelessRecipeJsonBuilder.create(ItemInit.REGALIA_HEALTH)
-                .input(ItemInit.REGALIA_PLATED)
-                .criterion(RecipeProvider.hasItem(ItemInit.REGALIA_PLATED),
-                        RecipeProvider.conditionsFromItem(ItemInit.REGALIA_PLATED))
+                .input(ItemInit.REGALIA)
+                .criterion(RecipeProvider.hasItem(ItemInit.REGALIA),
+                        RecipeProvider.conditionsFromItem(ItemInit.REGALIA))
                 .input(Items.STRING)
                 .criterion(RecipeProvider.hasItem(Items.STRING),
                         RecipeProvider.conditionsFromItem(Items.STRING))
