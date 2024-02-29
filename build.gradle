@@ -36,13 +36,12 @@ repositories {
 	// for more information about repositories.
 
 	maven {
-		name = ("TerraformersMC")
-		url = ("https://maven.terraformersmc.com")
+		name = "TerraformersMC"
+		url = "https://maven.terraformersmc.com/"
 	}
-
 	maven {
-		name = ("LadySnake Libs")
-		url = ("https://ladysnake.jfrog.io/artifactory/mods")
+		name = "Ladysnake Libs"
+		url = 'https://maven.ladysnake.org/releases'
 	}
 }
 
